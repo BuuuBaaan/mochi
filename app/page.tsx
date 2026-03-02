@@ -1,4 +1,5 @@
-﻿import Link from "next/link";
+import Image from "next/image";
+import Link from "next/link";
 
 import { ProductCard } from "@/components/goods/product-card";
 import { Badge } from "@/components/ui/badge";
@@ -85,13 +86,27 @@ export default async function Home() {
 
   return (
     <div className="page-wrap">
-      <section className="sparkle-strip relative isolate overflow-hidden border-b border-white/20 bg-[linear-gradient(146deg,#041229_0%,#0a3458_46%,#0f5f78_100%)] py-20 text-white">
-        <div className="mx-auto grid w-full max-w-6xl gap-10 content-block md:grid-cols-[1.1fr_0.9fr] md:items-center">
+      <section className="sparkle-strip relative isolate overflow-hidden border-b border-white/20 py-20 text-white">
+        <div className="layout-shell grid w-full gap-10 content-block md:grid-cols-[1.2fr_0.8fr] md:items-center">
           <div>
-            <p className="rise-in text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100/90">
+            <div className="rise-in inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/12 px-3 py-2 backdrop-blur-sm">
+              <span className="logo-plate inline-flex h-10 w-10 items-center justify-center rounded-full p-1">
+                <Image
+                  src={siteConfig.logo.src}
+                  alt={siteConfig.logo.alt}
+                  width={36}
+                  height={36}
+                  className="h-8 w-8 rounded-full object-cover"
+                />
+              </span>
+              <span className="font-ui text-[11px] font-semibold tracking-[0.2em] text-cyan-100/95">
+                MOCHIMEDAKA OFFICIAL
+              </span>
+            </div>
+            <p className="font-ui rise-in text-xs font-semibold uppercase tracking-[0.3em] text-cyan-100/90">
               Aquatic Craft
             </p>
-            <h1 className="font-display rise-in rise-delay-1 mt-4 text-4xl leading-tight text-white sm:text-5xl">
+            <h1 className="font-display rise-in rise-delay-1 mt-4 text-4xl font-semibold leading-tight text-white sm:text-5xl">
               ラメの煌めきと、強さのある育成個体を。
             </h1>
             <p className="rise-in rise-delay-2 mt-5 max-w-2xl text-base leading-8 text-slate-100/95">
@@ -102,16 +117,16 @@ export default async function Home() {
               <CtaButton href={siteConfig.social.yahooAuctions} target="_blank" rel="noreferrer">
                 出品中を見に行く（ヤフオク）
               </CtaButton>
-              <CtaButton href="/goods" variant="ghost" className="ring-white/35 bg-white/14 text-white hover:bg-white/20">
+              <CtaButton href="/goods" variant="ghost" className="ring-white/35 bg-white/12 text-white hover:bg-white/20">
                 物販を見る
               </CtaButton>
-              <CtaButton href="/shop" variant="ghost" className="ring-white/35 bg-white/14 text-white hover:bg-white/20">
+              <CtaButton href="/shop" variant="ghost" className="ring-white/35 bg-white/12 text-white hover:bg-white/20">
                 購入の流れを確認
               </CtaButton>
             </div>
           </div>
           <div className="glass-panel rounded-3xl p-6 text-white">
-            <h2 className="text-lg font-bold">信頼のために公開していること</h2>
+            <h2 className="font-display text-lg font-bold">信頼のために公開していること</h2>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-100/95">
               {trustPoints.map((point) => (
                 <li key={point} className="flex gap-2">
@@ -130,11 +145,11 @@ export default async function Home() {
       </section>
 
       <section className="surface py-10">
-        <div className="mx-auto w-full max-w-6xl content-block">
+        <div className="layout-shell w-full content-block">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {actionCards.map((action) => (
               <Card key={action.title} className="p-5">
-                <h2 className="text-lg font-semibold tracking-tight text-slate-900">{action.title}</h2>
+                <h2 className="font-display text-lg font-semibold tracking-tight text-slate-900">{action.title}</h2>
                 <p className="mt-2 text-sm leading-7 text-slate-700">{action.body}</p>
                 <div className="mt-5">
                   <CtaButton
@@ -153,11 +168,11 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-y border-white/15 bg-[linear-gradient(166deg,#041228,#0b3356_44%,#0b5a70_100%)] py-16 text-white">
-        <div className="mx-auto w-full max-w-6xl content-block">
+      <section className="sparkle-strip relative overflow-hidden border-y border-white/15 py-16 text-white">
+        <div className="layout-shell w-full content-block">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100/90">Goods</p>
+              <p className="font-ui text-xs font-semibold uppercase tracking-[0.26em] text-cyan-100/90">Goods</p>
               <h2 className="font-display mt-2 text-3xl text-white sm:text-4xl">物販（餌 / グリーンウォーター）</h2>
               <p className="mt-3 max-w-2xl text-sm leading-8 text-slate-100/95">
                 生体とは別に、日常運用を支える2商品だけを厳選。購入はAmazonへ送客し、準備中の場合は問い合わせ導線へ自動切替します。
@@ -170,18 +185,18 @@ export default async function Home() {
                 </CtaButton>
               ) : (
                 <>
-                  <span
+                <span
                     aria-disabled="true"
-                    className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold text-slate-200"
+                    className="font-ui inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold tracking-[0.03em] text-slate-200"
                   >
                     Amazon準備中
                   </span>
-                  <CtaButton href="/contact" variant="ghost" className="ring-white/35 bg-white/14 text-white hover:bg-white/20">
+                  <CtaButton href="/contact" variant="ghost" className="ring-white/35 bg-white/12 text-white hover:bg-white/20">
                     入荷通知を問い合わせる
                   </CtaButton>
                 </>
               )}
-              <CtaButton href="/goods" variant="ghost" className="ring-white/35 bg-white/14 text-white hover:bg-white/20">
+              <CtaButton href="/goods" variant="ghost" className="ring-white/35 bg-white/12 text-white hover:bg-white/20">
                 物販一覧を見る
               </CtaButton>
             </div>
@@ -192,10 +207,10 @@ export default async function Home() {
                 <Link
                   key={`home-tab-${product.slug}`}
                   href={`/goods/${product.slug}`}
-                  className="bubble-hover rounded-2xl border border-white/28 bg-white/10 px-5 py-4 transition hover:-translate-y-0.5 hover:bg-white/16"
+                  className="bubble-hover rounded-2xl border border-white/30 bg-white/12 px-5 py-4 transition hover:-translate-y-0.5 hover:bg-white/18"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cyan-100/90">注目商品</p>
-                  <p className="mt-2 text-lg font-semibold text-white">{product.name}</p>
+                  <p className="font-ui text-xs font-semibold uppercase tracking-[0.14em] text-cyan-100/90">注目商品</p>
+                  <p className="font-display mt-2 text-lg font-semibold text-white">{product.name}</p>
                   <p className="mt-1 text-sm leading-7 text-slate-100/95">{product.shortCatch}</p>
                 </Link>
               ))}
@@ -205,7 +220,7 @@ export default async function Home() {
                 <Link
                   key={tab.href}
                   href={tab.href}
-                  className="bubble-hover rounded-full border border-white/30 bg-white/8 px-4 py-2 text-sm font-semibold text-cyan-50 transition hover:bg-white/16"
+                  className="font-ui bubble-hover rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-cyan-50 transition hover:bg-white/16"
                 >
                   {tab.label}
                 </Link>
@@ -221,13 +236,13 @@ export default async function Home() {
       </section>
 
       <section className="py-16">
-        <div className="mx-auto w-full max-w-6xl content-block">
+        <div className="layout-shell w-full content-block">
           <div className="mb-7 flex items-end justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">Varieties</p>
+              <p className="font-ui text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">Varieties</p>
               <h2 className="section-title mt-2">注目の品種図鑑</h2>
             </div>
-            <Link href="/varieties" className="text-sm font-semibold text-cyan-800 hover:underline">
+            <Link href="/varieties" className="font-ui text-sm font-semibold tracking-[0.02em] text-cyan-800 hover:underline">
               すべての品種を見る →
             </Link>
           </div>
@@ -235,8 +250,8 @@ export default async function Home() {
             {featuredVarieties.map((variety) => (
               <Card key={variety.slug} className="p-4">
                 <FishTile label={variety.title} imageSrc={variety.image} className="h-32" />
-                <p className="mt-3 text-xs uppercase tracking-[0.17em] text-cyan-700">{variety.highlight}</p>
-                <h3 className="mt-2 text-lg font-semibold text-slate-900">
+                <p className="font-ui mt-3 text-xs uppercase tracking-[0.17em] text-cyan-700">{variety.highlight}</p>
+                <h3 className="font-display mt-2 text-lg font-semibold text-slate-900">
                   <Link href={`/varieties/${variety.slug}`} className="hover:text-cyan-700">
                     {variety.title}
                   </Link>
@@ -252,15 +267,15 @@ export default async function Home() {
       </section>
 
       <section className="surface py-16">
-        <div className="mx-auto w-full max-w-6xl content-block">
+        <div className="layout-shell w-full content-block">
           <div className="mb-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">How To Buy</p>
+            <p className="font-ui text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">How To Buy</p>
             <h2 className="section-title mt-2">購入までの流れ</h2>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {flowSteps.map((step) => (
               <Card key={step.title} className="p-6">
-                <h3 className="text-xl font-semibold tracking-tight text-slate-900">{step.title}</h3>
+                <h3 className="font-display text-xl font-semibold tracking-tight text-slate-900">{step.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-700">{step.body}</p>
               </Card>
             ))}
@@ -278,21 +293,21 @@ export default async function Home() {
       </section>
 
       <section className="py-16">
-        <div className="mx-auto w-full max-w-6xl content-block">
+        <div className="layout-shell w-full content-block">
           <div className="mb-7 flex items-end justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">Blog</p>
+              <p className="font-ui text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">Blog</p>
               <h2 className="section-title mt-2">最新の記事</h2>
             </div>
-            <Link href="/blog" className="text-sm font-semibold text-cyan-800 hover:underline">
+            <Link href="/blog" className="font-ui text-sm font-semibold tracking-[0.02em] text-cyan-800 hover:underline">
               ブログ一覧へ →
             </Link>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {featuredPosts.map((post) => (
               <Card key={post.slug} className="p-5">
-                <p className="text-xs uppercase tracking-[0.16em] text-cyan-700">{post.category}</p>
-                <h3 className="mt-2 text-xl font-semibold tracking-tight text-slate-900">
+                <p className="font-ui text-xs uppercase tracking-[0.16em] text-cyan-700">{post.category}</p>
+                <h3 className="font-display mt-2 text-xl font-semibold tracking-tight text-slate-900">
                   <Link href={`/blog/${post.slug}`} className="hover:text-cyan-700">
                     {post.title}
                   </Link>
@@ -308,9 +323,9 @@ export default async function Home() {
       </section>
 
       <section className="pb-16">
-        <div className="mx-auto grid w-full max-w-6xl gap-8 content-block md:grid-cols-[1fr_1fr] md:items-start">
+        <div className="layout-shell grid w-full gap-8 content-block md:grid-cols-[1.1fr_0.9fr] md:items-start">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">Movie</p>
+            <p className="font-ui text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">Movie</p>
             <h2 className="section-title mt-2">現物個体の動画チェック</h2>
             <p className="mt-4 text-sm leading-8 text-slate-700">
               体型・泳ぎ・ラメの光り方は、写真だけでは判断しづらいポイントです。
@@ -326,7 +341,7 @@ export default async function Home() {
             </div>
           </div>
           {hasVideo ? (
-            <div className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-900/95 p-2 shadow-lg">
+            <div className="overflow-hidden rounded-3xl border border-slate-200 bg-[linear-gradient(160deg,#0b3154,#114f73_56%,#1a6d89)] p-2 shadow-[0_18px_36px_rgba(8,35,60,0.28)]">
               <div className="relative aspect-video overflow-hidden rounded-2xl">
                 <iframe
                   title="もちめだか最新動画"
@@ -339,7 +354,7 @@ export default async function Home() {
               </div>
             </div>
           ) : (
-            <div className="rounded-3xl border border-dashed border-slate-300 bg-white/90 p-6">
+            <div className="rounded-3xl border border-dashed border-slate-300 bg-white/82 p-6">
               <p className="text-sm leading-7 text-slate-700">
                 `site.config.ts` の `featuredVideoId` にYouTube動画IDを設定すると、最新動画をここへ埋め込み表示します。
               </p>
@@ -350,6 +365,7 @@ export default async function Home() {
     </div>
   );
 }
+
 
 
 

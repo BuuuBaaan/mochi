@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -22,24 +22,26 @@ export function Header() {
   const amazonStoreUrl = getAmazonStoreUrl();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/15 bg-[linear-gradient(170deg,rgba(3,14,31,0.9),rgba(7,30,54,0.86)_55%,rgba(9,47,74,0.82))] backdrop-blur-xl">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
+    <header className="sticky top-0 z-50 border-b border-white/20 bg-[linear-gradient(168deg,rgba(6,31,55,0.9),rgba(12,53,88,0.88)_56%,rgba(18,82,109,0.82))] backdrop-blur-xl">
+      <div className="layout-shell flex w-full items-center justify-between gap-3 px-4 py-3.5 sm:px-6">
         <Link
           href="/"
-          className="group inline-flex items-center gap-4 rounded-full px-2 py-1 outline-none transition hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-cyan-300"
+          className="group inline-flex items-center gap-4 rounded-full px-2 py-1 outline-none transition hover:bg-white/8 focus-visible:ring-2 focus-visible:ring-cyan-300"
         >
-          <span className="logo-plate inline-flex h-14 w-14 items-center justify-center rounded-full p-1.5 sm:h-16 sm:w-16">
+          <span className="logo-plate inline-flex h-14 w-14 items-center justify-center rounded-full p-1.5 sm:h-[4.5rem] sm:w-[4.5rem]">
             <Image
               src={siteConfig.logo.src}
               alt={siteConfig.logo.alt}
-              width={56}
-              height={56}
-              className="h-11 w-11 rounded-full object-cover sm:h-12 sm:w-12"
+              width={64}
+              height={64}
+              className="h-11 w-11 rounded-full object-cover sm:h-[3.55rem] sm:w-[3.55rem]"
             />
           </span>
           <span className="hidden sm:block">
-            <span className="block text-base font-bold tracking-[0.07em] text-white">{siteConfig.name}</span>
-            <span className="block text-[11px] tracking-[0.16em] text-cyan-100/90">Official Site</span>
+            <span className="font-display block text-[1.18rem] font-semibold tracking-[0.05em] text-white">
+              {siteConfig.name}
+            </span>
+            <span className="font-ui block text-[11px] tracking-[0.2em] text-cyan-100/90">OFFICIAL SITE</span>
           </span>
         </Link>
 
@@ -48,7 +50,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls="global-nav"
           onClick={() => setOpen((prev) => !prev)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/30 bg-white/10 text-white md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/30 bg-white/12 text-white md:hidden"
         >
           <span className="sr-only">メニューを開閉</span>
           <span className="space-y-1.5">
@@ -65,8 +67,8 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-full px-3 py-2 text-sm font-medium text-slate-100 transition hover:bg-white/12 hover:text-white focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:outline-none",
-                  isActive(pathname, item.href) && "bg-white/20 text-white",
+                  "font-ui rounded-full px-3 py-2 text-sm font-semibold tracking-[0.03em] text-slate-100 transition hover:bg-white/14 hover:text-white focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:outline-none",
+                  isActive(pathname, item.href) && "bg-white/22 text-white",
                 )}
               >
                 {item.label}
@@ -77,7 +79,7 @@ export function Header() {
             href={siteConfig.social.yahooAuctions}
             target="_blank"
             rel="noreferrer"
-            className="bubble-hover rounded-full bg-[linear-gradient(132deg,#8cecf9,#5ad9ee_48%,#4ec5e7)] px-4 py-2 text-sm font-semibold text-[#07233d] shadow-[0_10px_20px_rgba(10,107,141,0.35)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+            className="font-ui bubble-hover rounded-full bg-[linear-gradient(136deg,#0f426f,#165c95_52%,#1a76a7)] px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[#eef8ff] shadow-[0_12px_24px_rgba(10,44,77,0.36)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
           >
             出品中を見る
           </Link>
@@ -86,12 +88,12 @@ export function Header() {
               href={amazonStoreUrl}
               target="_blank"
               rel="noreferrer"
-              className="bubble-hover rounded-full border border-white/34 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/16 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+              className="font-ui bubble-hover rounded-full border border-white/34 bg-white/12 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-white transition hover:bg-white/18 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
             >
               Amazonページへ
             </Link>
           ) : (
-            <span className="rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold text-slate-300">
+            <span className="font-ui rounded-full border border-white/25 bg-white/12 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-slate-300">
               Amazon準備中
             </span>
           )}
@@ -105,14 +107,14 @@ export function Header() {
         )}
       >
         <nav className="overflow-hidden">
-          <div className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-4 py-3 sm:px-6">
+          <div className="layout-shell flex w-full flex-col gap-1 px-4 py-3 sm:px-6">
             {siteConfig.navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "rounded-lg px-3 py-2 text-sm font-medium text-slate-100",
+                  "font-ui rounded-lg px-3 py-2 text-sm font-semibold tracking-[0.03em] text-slate-100",
                   isActive(pathname, item.href) && "bg-white/20 text-white",
                 )}
               >
@@ -124,14 +126,14 @@ export function Header() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="bubble-hover mt-2 rounded-lg bg-[linear-gradient(132deg,#8cecf9,#5ad9ee_48%,#4ec5e7)] px-3 py-2 text-center text-sm font-semibold text-[#07233d]"
+              className="font-ui bubble-hover mt-2 rounded-lg bg-[linear-gradient(136deg,#0f426f,#165c95_52%,#1a76a7)] px-3 py-2 text-center text-sm font-semibold tracking-[0.03em] text-[#eef8ff]"
             >
               出品中を見に行く（ヤフオク）
             </Link>
             <Link
               href={amazonStoreUrl ?? "/goods"}
               onClick={() => setOpen(false)}
-              className="bubble-hover rounded-lg border border-white/30 bg-white/10 px-3 py-2 text-center text-sm font-semibold text-white"
+              className="font-ui bubble-hover rounded-lg border border-white/30 bg-white/12 px-3 py-2 text-center text-sm font-semibold tracking-[0.03em] text-white"
             >
               {amazonStoreUrl ? "Amazonページへ" : "Amazon準備中（物販ページへ）"}
             </Link>
@@ -141,4 +143,5 @@ export function Header() {
     </header>
   );
 }
+
 

@@ -12,7 +12,7 @@ export function Card({
   return (
     <article
       className={cn(
-        "group overflow-hidden rounded-3xl border border-[#a5cbe6]/70 bg-[linear-gradient(160deg,rgba(245,251,255,0.96),rgba(232,244,254,0.94)_60%,rgba(240,249,255,0.95))] shadow-[0_14px_34px_rgba(8,35,61,0.14)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_52px_rgba(5,27,49,0.2)]",
+        "group overflow-hidden rounded-3xl border border-[rgba(134,172,202,0.58)] bg-[linear-gradient(162deg,rgba(252,255,255,0.84),rgba(240,248,255,0.86)_58%,rgba(232,245,255,0.88))] shadow-[0_16px_38px_rgba(9,34,56,0.13)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(8,29,49,0.18)]",
         className,
       )}
     >

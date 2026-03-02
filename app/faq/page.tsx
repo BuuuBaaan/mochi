@@ -91,7 +91,7 @@ export default function FaqPage() {
         }
       />
 
-      <div className="mx-auto w-full max-w-4xl content-block pt-8">
+      <div className="layout-reading w-full content-block pt-8">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },

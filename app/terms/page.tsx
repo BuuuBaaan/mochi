@@ -17,7 +17,7 @@ export default function TermsPage() {
         description="当サイトの利用条件を記載します。送客サイトとしての範囲と責任分界を明確化しています。"
       />
 
-      <div className="mx-auto w-full max-w-4xl content-block pt-8">
+      <div className="layout-reading w-full content-block pt-8">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },

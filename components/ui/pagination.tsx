@@ -25,7 +25,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         type="button"
         onClick={() => onPageChange(Math.max(1, currentPage - 1))}
         disabled={currentPage === 1}
-        className="bubble-hover rounded-xl border border-sky-300/70 bg-white/80 px-3 py-2 text-sm text-slate-700 shadow-sm disabled:cursor-not-allowed disabled:opacity-40"
+        className="font-ui bubble-hover rounded-xl border border-sky-300/75 bg-white/76 px-3 py-2 text-sm font-semibold tracking-[0.04em] text-slate-700 shadow-sm disabled:cursor-not-allowed disabled:opacity-40"
       >
         前へ
       </button>
@@ -36,10 +36,10 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
           onClick={() => onPageChange(page)}
           aria-current={page === currentPage ? "page" : undefined}
           className={cn(
-            "bubble-hover rounded-xl px-3 py-2 text-sm font-medium shadow-sm",
+            "font-ui bubble-hover rounded-xl px-3 py-2 text-sm font-semibold tracking-[0.04em] shadow-sm",
             page === currentPage
-              ? "bg-[linear-gradient(132deg,#0a1f39,#12395f_55%,#0f5d75)] text-white"
-              : "border border-sky-300/70 bg-white/80 text-slate-700 hover:bg-white",
+              ? "bg-[linear-gradient(136deg,#0e3f6b,#14588f_52%,#1b71a0)] text-white"
+              : "border border-sky-300/75 bg-white/76 text-slate-700 hover:bg-white",
           )}
         >
           {page}
@@ -49,7 +49,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         type="button"
         onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
         disabled={currentPage === totalPages}
-        className="bubble-hover rounded-xl border border-sky-300/70 bg-white/80 px-3 py-2 text-sm text-slate-700 shadow-sm disabled:cursor-not-allowed disabled:opacity-40"
+        className="font-ui bubble-hover rounded-xl border border-sky-300/75 bg-white/76 px-3 py-2 text-sm font-semibold tracking-[0.04em] text-slate-700 shadow-sm disabled:cursor-not-allowed disabled:opacity-40"
       >
         次へ
       </button>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -117,7 +117,7 @@ export default async function GoodsDetailPage({ params }: GoodsDetailPageProps) 
   return (
     <div className="page-wrap pb-16">
       <JsonLd data={[breadcrumbJsonLd, productJsonLd, faqJsonLd]} />
-      <div className="mx-auto w-full max-w-6xl content-block pt-10">
+      <div className="layout-shell w-full content-block pt-10">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },
@@ -265,3 +265,5 @@ export default async function GoodsDetailPage({ params }: GoodsDetailPageProps) 
     </div>
   );
 }
+
+

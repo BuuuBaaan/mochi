@@ -12,25 +12,27 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, description, badges = [], actions }: PageHeroProps) {
   return (
-    <section className="sparkle-strip relative overflow-hidden border-b border-white/20 bg-[linear-gradient(162deg,#041429,#0d3658_52%,#0f586f)] py-14 text-white">
+    <section className="sparkle-strip relative overflow-hidden border-b border-white/18 py-16 text-[var(--text-inverse)]">
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-28 left-[-12%] h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl"
+        className="pointer-events-none absolute -top-24 left-[-10%] h-72 w-72 rounded-full bg-cyan-200/22 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-32 right-[-8%] h-80 w-80 rounded-full bg-amber-200/15 blur-3xl"
+        className="pointer-events-none absolute -bottom-28 right-[-7%] h-80 w-80 rounded-full bg-amber-200/14 blur-3xl"
       />
-      <div className="mx-auto w-full max-w-6xl content-block">
-        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-100/90">{eyebrow}</p>
-        <h1 className="mt-4 text-4xl font-extrabold leading-tight text-white sm:text-5xl">{title}</h1>
+      <div className="layout-shell w-full content-block">
+        <p className="font-ui text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100/90">{eyebrow}</p>
+        <h1 className="font-display mt-4 text-4xl font-bold leading-[1.24] text-[var(--text-inverse)] sm:text-5xl">
+          {title}
+        </h1>
         <p className="mt-5 max-w-3xl text-sm leading-8 text-slate-100/95 sm:text-base">{description}</p>
         {badges.length > 0 ? (
           <div className="mt-6 flex flex-wrap gap-2">
             {badges.map((badge) => (
               <Badge
                 key={badge}
-                className="border-cyan-300/45 bg-cyan-200/20 text-cyan-50"
+                className="border-cyan-200/55 bg-cyan-100/18 text-cyan-50"
               >
                 {badge}
               </Badge>
@@ -42,3 +44,4 @@ export function PageHero({ eyebrow, title, description, badges = [], actions }: 
     </section>
   );
 }
+

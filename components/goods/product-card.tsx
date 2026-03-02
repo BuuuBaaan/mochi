@@ -13,7 +13,7 @@ type ProductCardProps = {
 
 export function ProductCard({ product, compact = false }: ProductCardProps) {
   return (
-    <Card className="overflow-hidden border-white/20 bg-[linear-gradient(162deg,rgba(4,18,39,0.72),rgba(10,43,70,0.66)_58%,rgba(12,69,94,0.6))]">
+    <Card className="overflow-hidden border-white/24 bg-[linear-gradient(162deg,rgba(8,32,58,0.74),rgba(12,48,78,0.66)_58%,rgba(20,88,112,0.58))]">
       <Link href={`/goods/${product.slug}`} className="block">
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
@@ -31,8 +31,8 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
           <Badge className="border-amber-200/40 bg-amber-200/10 text-amber-100">Amazon送客</Badge>
         </div>
 
-        <div className="bubble-hover rounded-2xl border border-white/15 bg-white/5 p-4">
-          <h3 className="text-2xl font-semibold tracking-tight text-white">
+        <div className="bubble-hover rounded-2xl border border-white/18 bg-white/8 p-4">
+          <h3 className="font-display text-2xl font-semibold tracking-tight text-white">
             <Link href={`/goods/${product.slug}`} className="hover:text-cyan-200">
               {product.name}
             </Link>
@@ -53,7 +53,7 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
           <AmazonCta url={product.amazonProductUrl} compact />
           <Link
             href={`/goods/${product.slug}`}
-            className="bubble-hover inline-flex items-center justify-center rounded-full border border-white/30 bg-white/8 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/14 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+            className="font-ui bubble-hover inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-white transition hover:bg-white/16 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
           >
             詳細を見る
           </Link>

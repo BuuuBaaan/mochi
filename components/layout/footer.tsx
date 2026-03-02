@@ -15,10 +15,10 @@ export function Footer() {
   const amazonStoreUrl = getAmazonStoreUrl();
 
   return (
-    <footer className="border-t border-white/15 bg-[linear-gradient(168deg,#041128,#0a2b4b_45%,#0a3f5d)] text-slate-200">
-      <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-12 sm:grid-cols-3 sm:px-6">
+    <footer className="border-t border-white/18 bg-[linear-gradient(166deg,#06213d,#103f68_46%,#1a6584)] text-slate-100">
+      <div className="layout-shell grid w-full gap-8 px-4 py-12 sm:grid-cols-3 sm:px-6">
         <section>
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/10 px-3 py-2">
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/28 bg-white/12 px-3 py-2 backdrop-blur-sm">
             <Image
               src={siteConfig.logo.src}
               alt={siteConfig.logo.alt}
@@ -27,18 +27,18 @@ export function Footer() {
               className="logo-plate h-12 w-12 rounded-full border border-white/65 object-cover p-1"
             />
             <div>
-              <h2 className="text-base font-semibold tracking-[0.05em] text-white">{siteConfig.name}</h2>
-              <p className="text-xs tracking-[0.15em] text-cyan-100/90">Official Brand</p>
+              <h2 className="font-display text-base font-semibold tracking-[0.05em] text-white">{siteConfig.name}</h2>
+              <p className="font-ui text-xs tracking-[0.17em] text-cyan-100/90">OFFICIAL BRAND</p>
             </div>
           </div>
-          <p className="mt-4 text-sm leading-relaxed text-slate-200/90">
+          <p className="mt-4 text-sm leading-relaxed text-slate-100/90">
             ラメ系とダルマ系を中心に、屋外・屋根なし・雨ざらし飼育で「強い個体」を目指して育成。
             迅速丁寧な対応とスピーディな発送を心がけています。購入前の不安はFAQと動画で解消できます。
           </p>
         </section>
 
         <section>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-100/85">
+          <h2 className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-cyan-100/88">
             外部リンク
           </h2>
           <ul className="mt-3 space-y-2 text-sm">
@@ -100,7 +100,7 @@ export function Footer() {
         </section>
 
         <section>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-100/85">
+          <h2 className="font-ui text-sm font-semibold uppercase tracking-[0.2em] text-cyan-100/88">
             ポリシー
           </h2>
           <ul className="mt-3 space-y-2 text-sm">
@@ -126,9 +126,10 @@ export function Footer() {
           </p>
         </section>
       </div>
-      <div className="border-t border-white/10 py-4 text-center text-xs text-slate-300">
+      <div className="font-ui border-t border-white/12 py-4 text-center text-xs tracking-[0.08em] text-slate-200/90">
         © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
       </div>
     </footer>
   );
 }
+

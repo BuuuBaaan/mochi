@@ -45,7 +45,7 @@ export default function AuctionsPage() {
         }
       />
 
-      <div className="mx-auto w-full max-w-6xl content-block pt-8">
+      <div className="layout-shell w-full content-block pt-8">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },
@@ -87,3 +87,5 @@ export default function AuctionsPage() {
     </div>
   );
 }
+
+

@@ -65,7 +65,7 @@ export function FilterableGrid({
             setCurrentPage(1);
           }}
           placeholder={`${typeLabel}をタイトル・タグで検索`}
-          className="w-full rounded-2xl border border-sky-300/75 bg-white/85 px-4 py-3 text-sm text-slate-900 shadow-[0_10px_24px_rgba(7,39,70,0.12)] outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
+          className="font-ui w-full rounded-2xl border border-sky-300/75 bg-white/82 px-4 py-3 text-sm tracking-[0.02em] text-slate-900 shadow-[0_12px_28px_rgba(7,39,70,0.11)] outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
         />
       </div>
 
@@ -95,7 +95,7 @@ export function FilterableGrid({
                 <div className="mt-5">
                   <Link
                     href={item.href}
-                    className="bubble-hover inline-flex rounded-full border border-sky-300/70 bg-white/70 px-3 py-1.5 text-sm font-semibold text-cyan-800 transition hover:bg-white"
+                    className="font-ui bubble-hover inline-flex rounded-full border border-sky-300/70 bg-white/70 px-3 py-1.5 text-sm font-semibold tracking-[0.03em] text-cyan-800 transition hover:bg-white"
                   >
                     詳細を見る →
                   </Link>

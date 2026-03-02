@@ -90,7 +90,7 @@ export default async function VarietyDetailPage({ params }: VarietyDetailPagePro
     <div className="page-wrap pb-16">
       <JsonLd data={[breadcrumbJsonLd, productLikeJsonLd]} />
 
-      <div className="mx-auto w-full max-w-4xl content-block pt-10">
+      <div className="layout-reading w-full content-block pt-10">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },

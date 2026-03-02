@@ -3,9 +3,9 @@ import type { MDXComponents } from "mdx/types";
 
 export const mdxComponents: MDXComponents = {
   h2: (props) => (
-    <h2 className="mt-10 text-2xl font-bold tracking-tight text-slate-900" {...props} />
+    <h2 className="font-display mt-10 text-2xl font-bold tracking-[0.02em] text-slate-900" {...props} />
   ),
-  h3: (props) => <h3 className="mt-8 text-xl font-semibold text-slate-900" {...props} />,
+  h3: (props) => <h3 className="font-display mt-8 text-xl font-semibold tracking-[0.01em] text-slate-900" {...props} />,
   p: (props) => <p className="mt-4 leading-8 text-slate-700" {...props} />,
   ul: (props) => <ul className="mt-4 list-disc space-y-2 pl-6 text-slate-700" {...props} />,
   ol: (props) => <ol className="mt-4 list-decimal space-y-2 pl-6 text-slate-700" {...props} />,

@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { CtaButton } from "@/components/ui/cta-button";
@@ -26,7 +26,7 @@ export default function ContactPage() {
         badges={["メール対応", "フォーム対応", "迅速返信"]}
       />
 
-      <div className="mx-auto w-full max-w-6xl content-block pt-8">
+      <div className="layout-shell w-full content-block pt-8">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },
@@ -131,4 +131,7 @@ export default function ContactPage() {
     </div>
   );
 }
+
+
+
 

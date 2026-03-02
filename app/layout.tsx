@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
+import { Noto_Sans_JP, Outfit, Shippori_Mincho } from "next/font/google";
 
 import { Analytics } from "@/components/analytics";
 import { SiteShell } from "@/components/layout/site-shell";
@@ -12,14 +12,24 @@ import "./globals.css";
 
 const notoSansJp = Noto_Sans_JP({
   variable: "--font-sans-jp",
-  weight: ["400", "500", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
+  preload: true,
 });
 
-const notoSerifJp = Noto_Serif_JP({
-  variable: "--font-serif-jp",
-  weight: ["500", "700"],
+const shipporiMincho = Shippori_Mincho({
+  variable: "--font-display-jp",
+  weight: ["500", "600", "700", "800"],
   display: "swap",
+  preload: true,
+});
+
+const outfit = Outfit({
+  variable: "--font-ui-latin",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -93,7 +103,7 @@ export default function RootLayout({
 
   return (
     <html lang="ja">
-      <body className={`${notoSansJp.variable} ${notoSerifJp.variable} antialiased`}>
+      <body className={`${notoSansJp.variable} ${shipporiMincho.variable} ${outfit.variable} antialiased`}>
         <JsonLd data={orgSchema} />
         <SiteShell>{children}</SiteShell>
         <Analytics />
