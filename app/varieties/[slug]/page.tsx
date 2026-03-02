@@ -90,7 +90,7 @@ export default async function VarietyDetailPage({ params }: VarietyDetailPagePro
     <div className="page-wrap pb-16">
       <JsonLd data={[breadcrumbJsonLd, productLikeJsonLd]} />
 
-      <div className="layout-reading w-full content-block pt-10">
+      <div className="layout-reading w-full content-block content-stage-reading pt-10">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },
@@ -142,7 +142,7 @@ export default async function VarietyDetailPage({ params }: VarietyDetailPagePro
             体型や光り方の最終判断は動画が有効です。YouTubeの現物動画、ヤフオク出品画像を合わせて確認してください。
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer">
+            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="secondary">
               YouTubeで現物動画を見る
             </CtaButton>
             <CtaButton href={siteConfig.social.yahooAuctions} target="_blank" rel="noreferrer" variant="ghost">

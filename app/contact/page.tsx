@@ -26,7 +26,7 @@ export default function ContactPage() {
         badges={["メール対応", "フォーム対応", "迅速返信"]}
       />
 
-      <div className="layout-shell w-full content-block pt-8">
+      <div className="layout-shell w-full content-block content-stage pt-8">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },

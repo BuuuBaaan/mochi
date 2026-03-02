@@ -99,7 +99,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   return (
     <div className="page-wrap pb-16">
       <JsonLd data={[articleJsonLd, breadcrumbJsonLd]} />
-      <div className="layout-reading w-full content-block pt-10">
+      <div className="layout-reading w-full content-block content-stage-reading pt-10">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },
@@ -151,7 +151,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
             <CtaButton href="/faq" variant="ghost">
               FAQを読む
             </CtaButton>
-            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="ghost">
+            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="secondary">
               YouTubeで現物動画を見る
             </CtaButton>
             <CtaButton href="/goods" variant="ghost">

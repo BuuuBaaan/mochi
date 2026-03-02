@@ -38,14 +38,14 @@ export default function AuctionsPage() {
             <CtaButton href={siteConfig.social.yahooAuctions} target="_blank" rel="noreferrer">
               出品者ページを開く
             </CtaButton>
-            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="ghost">
+            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="secondary">
               YouTubeで現物動画を見る
             </CtaButton>
           </>
         }
       />
 
-      <div className="layout-shell w-full content-block pt-8">
+      <div className="layout-shell w-full content-block content-stage pt-8">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },

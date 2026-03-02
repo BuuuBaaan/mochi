@@ -32,7 +32,7 @@ export default async function VarietiesPage() {
         badges={["ラメ系中心", "ダルマ系", "飼育コツ", "初心者難易度"]}
       />
 
-      <div className="layout-shell w-full content-block pt-8">
+      <div className="layout-shell w-full content-block content-stage pt-8">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },

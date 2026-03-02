@@ -167,15 +167,7 @@ export default async function Home() {
         />
         <div className="layout-shell w-full content-block">
           <div className="relative rounded-[2rem] border border-[#a2c9e1]/70 bg-[linear-gradient(155deg,rgba(251,255,255,0.88),rgba(238,248,255,0.9)_52%,rgba(233,246,255,0.88))] p-6 shadow-[0_18px_44px_rgba(9,35,58,0.14)] md:p-8">
-            <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-              <div>
-                <p className="font-ui text-xs font-semibold uppercase tracking-[0.24em] text-[#2e6f96]">Quick Actions</p>
-                <h2 className="font-display mt-2 text-2xl font-semibold text-[#123a5c] md:text-3xl">最短導線をここに集約</h2>
-              </div>
-              <p className="max-w-xl text-sm leading-7 text-[#325a78]">
-                現物確認・最新情報・出品在庫・不安解消を一つの帯に統合。ロゴの勢いをアクセントに、迷わない行動導線へ。
-              </p>
-            </div>
+            <p className="mb-5 font-ui text-xs font-semibold uppercase tracking-[0.24em] text-[#2e6f96]">Quick Actions</p>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {actionCards.map((action) => (
               <Link
@@ -266,7 +258,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="section-aqua py-16">
         <div className="layout-shell w-full content-block">
           <div className="mb-7 flex items-end justify-between gap-3">
             <div>
@@ -297,7 +289,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="surface py-16">
+      <section className="section-aqua-soft py-16">
         <div className="layout-shell w-full content-block">
           <div className="mb-6">
             <p className="font-ui text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">How To Buy</p>
@@ -323,7 +315,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-16">
+      <section className="section-aqua py-16">
         <div className="layout-shell w-full content-block">
           <div className="mb-7 flex items-end justify-between gap-3">
             <div>
@@ -353,7 +345,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="pb-16">
+      <section className="section-aqua-soft pb-16">
         <div className="layout-shell grid w-full gap-8 content-block md:grid-cols-[1.1fr_0.9fr] md:items-start">
           <div>
             <p className="font-ui text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">Movie</p>
@@ -363,7 +355,7 @@ export default async function Home() {
               YouTubeで現物動画を公開し、購入前の不安を減らします。
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer">
+              <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="secondary">
                 YouTubeで現物動画を見る
               </CtaButton>
               <CtaButton href="/faq" variant="ghost">

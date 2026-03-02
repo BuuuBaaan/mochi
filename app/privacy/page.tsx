@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         description="当サイトで取得する情報の取り扱い方針を記載します。必要に応じて運用実態に合わせて更新してください。"
       />
 
-      <div className="layout-reading w-full content-block pt-8">
+      <div className="layout-reading w-full content-block content-stage-reading pt-8">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },

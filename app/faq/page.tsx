@@ -84,14 +84,14 @@ export default function FaqPage() {
             <CtaButton href="/goods" variant="ghost">
               物販を見る
             </CtaButton>
-            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="ghost">
+            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="secondary">
               YouTubeで確認する
             </CtaButton>
           </>
         }
       />
 
-      <div className="layout-reading w-full content-block pt-8">
+      <div className="layout-reading w-full content-block content-stage-reading pt-8">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },

@@ -22,7 +22,7 @@ export default function AboutPage() {
         badges={["ラメ系中心", "ダルマ作りに着手", "発送スピード重視"]}
         actions={
           <>
-            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer">
+            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="secondary">
               YouTubeで育成動画を見る
             </CtaButton>
             <CtaButton href="/shop" variant="ghost">
@@ -32,7 +32,7 @@ export default function AboutPage() {
         }
       />
 
-      <div className="layout-shell w-full content-block pt-8">
+      <div className="layout-shell w-full content-block content-stage pt-8">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },

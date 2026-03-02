@@ -32,7 +32,7 @@ export default async function BlogPage() {
         badges={["雨ざらし飼育", "ラメ系", "ダルマ", "購入前チェック"]}
       />
 
-      <div className="layout-shell w-full content-block pt-8">
+      <div className="layout-shell w-full content-block content-stage pt-8">
         <Breadcrumb
           items={[
             { label: "ホーム", href: "/" },
