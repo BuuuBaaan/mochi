@@ -1,6 +1,6 @@
-﻿const amazonStoreUrl = process.env.NEXT_PUBLIC_AMAZON_STORE_URL ?? "";
-const amazonProductUrlFeed = process.env.NEXT_PUBLIC_AMAZON_PRODUCT_URL_FEED ?? "";
-const amazonProductUrlGreenWater = process.env.NEXT_PUBLIC_AMAZON_PRODUCT_URL_GREENWATER ?? "";
+﻿const amazonStoreUrl = "https://www.amazon.co.jp/stores/page/D6098CA6-CD20-4219-BDA8-EC49A72D94BE";
+const amazonProductUrlFeed = "https://www.amazon.co.jp/dp/B0D8YJXRZ8";
+const amazonProductUrlGreenWater = "https://www.amazon.co.jp/dp/B0DJMBBRM5";
 
 export const siteConfig = {
   name: "もちめだか",
