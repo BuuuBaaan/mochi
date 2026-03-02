@@ -1,0 +1,366 @@
+@import "tailwindcss";
+
+:root {
+  --background: #061125;
+  --foreground: #eaf4ff;
+  --brand-deep: #041429;
+  --brand-mid: #0c3c60;
+  --brand-soft: #73e7f6;
+  --brand-glow: #fee7ad;
+  --surface: #bfd6e9;
+  --surface-muted: #aac8df;
+  --surface-card: #d5e7f5;
+  --ink-strong: #0b1f39;
+  --ink-soft: #315173;
+  --font-body: var(--font-sans-jp), "Yu Gothic", "Meiryo", sans-serif;
+  --font-display: var(--font-serif-jp), "Yu Mincho", serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 10%, rgb(115 231 246 / 0.2) 0, transparent 28%),
+    radial-gradient(circle at 88% 16%, rgb(254 231 173 / 0.12) 0, transparent 24%),
+    radial-gradient(circle at 82% 82%, rgb(45 212 191 / 0.12) 0, transparent 28%),
+    linear-gradient(165deg, #050d1f 0%, #082447 42%, #0a2f50 100%);
+  color: var(--foreground);
+  font-family: var(--font-body), "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.1) 1px, transparent 0),
+    linear-gradient(180deg, rgb(255 255 255 / 0.04), transparent 44%);
+  background-size: 6px 6px, 100% 100%;
+  mix-blend-mode: soft-light;
+  opacity: 0.4;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--brand-soft), white 35%);
+  color: #062334;
+}
+
+.font-display {
+  font-family: var(--font-display), "Yu Mincho", serif;
+}
+
+.page-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -20% auto auto -16%;
+  width: clamp(16rem, 28vw, 30rem);
+  height: clamp(16rem, 28vw, 30rem);
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgb(115 231 246 / 0.2), transparent 68%);
+  filter: blur(14px);
+  pointer-events: none;
+}
+
+.page-wrap::after {
+  content: "";
+  position: absolute;
+  inset: auto -10% -16% auto;
+  width: clamp(18rem, 30vw, 34rem);
+  height: clamp(18rem, 30vw, 34rem);
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgb(254 231 173 / 0.16), transparent 70%);
+  filter: blur(16px);
+  pointer-events: none;
+}
+
+.surface {
+  background: linear-gradient(
+    180deg,
+    rgb(200 223 241 / 0.92) 0%,
+    rgb(184 212 235 / 0.92) 48%,
+    rgb(194 220 239 / 0.92) 100%
+  );
+  border-top: 1px solid rgb(255 255 255 / 0.38);
+  border-bottom: 1px solid rgb(255 255 255 / 0.34);
+}
+
+.sparkle-strip {
+  background-image:
+    radial-gradient(circle at 12% 40%, rgb(186 230 253 / 0.32) 0, transparent 32%),
+    radial-gradient(circle at 70% 25%, rgb(254 240 138 / 0.2) 0, transparent 24%),
+    radial-gradient(circle at 84% 75%, rgb(167 243 208 / 0.18) 0, transparent 32%);
+}
+
+.media-placeholder {
+  background:
+    radial-gradient(circle at 20% 20%, rgb(153 246 228 / 0.85) 0, transparent 45%),
+    radial-gradient(circle at 75% 25%, rgb(125 211 252 / 0.9) 0, transparent 45%),
+    radial-gradient(circle at 75% 75%, rgb(254 240 138 / 0.65) 0, transparent 50%),
+    linear-gradient(145deg, #0c4a6e, #0f172a 58%);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: rise 700ms ease-out both;
+}
+
+.rise-delay-1 {
+  animation-delay: 80ms;
+}
+
+.rise-delay-2 {
+  animation-delay: 160ms;
+}
+
+.rise-delay-3 {
+  animation-delay: 240ms;
+}
+
+.bubble-hover {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.bubble-hover::before,
+.bubble-hover::after {
+  content: "";
+  position: absolute;
+  bottom: -0.75rem;
+  border-radius: 9999px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.bubble-hover::before {
+  left: 22%;
+  width: 0.55rem;
+  height: 0.55rem;
+  background: rgb(183 252 255 / 0.7);
+}
+
+.bubble-hover::after {
+  right: 28%;
+  width: 0.38rem;
+  height: 0.38rem;
+  background: rgb(226 248 255 / 0.7);
+}
+
+.bubble-hover:hover::before,
+.bubble-hover:focus-visible::before {
+  animation: bubble-float 1s ease-out;
+}
+
+.bubble-hover:hover::after,
+.bubble-hover:focus-visible::after {
+  animation: bubble-float-small 0.88s ease-out 0.08s;
+}
+
+@keyframes bubble-float {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.65);
+  }
+  22% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-0.32rem, -2.3rem, 0) scale(1.04);
+  }
+}
+
+@keyframes bubble-float-small {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.7);
+  }
+  20% {
+    opacity: 0.72;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0.26rem, -1.95rem, 0) scale(1.08);
+  }
+}
+
+.glass-panel {
+  border: 1px solid rgb(191 219 254 / 0.25);
+  background: linear-gradient(
+    165deg,
+    rgb(3 12 29 / 0.62) 0%,
+    rgb(11 35 61 / 0.5) 42%,
+    rgb(8 66 87 / 0.42) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.2),
+    0 16px 40px rgb(2 8 24 / 0.3);
+  backdrop-filter: blur(12px);
+}
+
+.section-title {
+  font-family: var(--font-display), "Yu Mincho", serif;
+  font-size: clamp(1.8rem, 2.4vw, 2.8rem);
+  line-height: 1.2;
+  color: var(--ink-strong);
+}
+
+.rich-content {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: var(--ink-soft);
+}
+
+.rich-content a {
+  color: #0b6586;
+}
+
+.rich-content img {
+  border-radius: 1.2rem;
+  border: 1px solid rgb(173 216 239 / 0.55);
+  box-shadow: 0 10px 28px rgb(6 32 58 / 0.14);
+}
+
+.rich-content table {
+  width: 100%;
+  margin-top: 1.2rem;
+  border-collapse: collapse;
+}
+
+.rich-content th,
+.rich-content td {
+  border: 1px solid rgb(177 211 236);
+  padding: 0.6rem 0.8rem;
+}
+
+.rich-content th {
+  background: rgb(224 239 250);
+  font-weight: 700;
+}
+
+.content-block {
+  padding-inline: 1.1rem;
+}
+
+.site-surface {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(
+    180deg,
+    rgb(186 213 235 / 0.95) 0%,
+    rgb(165 197 223 / 0.94) 36%,
+    rgb(176 206 230 / 0.95) 100%
+  );
+}
+
+.site-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 12%, rgb(220 244 255 / 0.5), transparent 40%),
+    radial-gradient(circle at 76% 82%, rgb(215 241 255 / 0.42), transparent 42%),
+    repeating-linear-gradient(
+      8deg,
+      rgb(255 255 255 / 0.08) 0,
+      rgb(255 255 255 / 0.08) 3px,
+      transparent 3px,
+      transparent 26px
+    ),
+    linear-gradient(180deg, rgb(8 48 84 / 0.08), transparent 30%);
+}
+
+.site-surface :is(.bg-white, .bg-white\/95) {
+  background-color: rgb(219 236 249 / 0.9) !important;
+}
+
+.site-surface :is(.border-slate-200, .border-slate-300) {
+  border-color: rgb(160 203 232 / 0.62) !important;
+}
+
+.site-surface :is(.text-slate-900, .text-slate-800) {
+  color: var(--ink-strong) !important;
+}
+
+.site-surface :is(.text-slate-700, .text-slate-600) {
+  color: var(--ink-soft) !important;
+}
+
+.site-surface :is(.bg-slate-50\/70, .bg-cyan-50\/70, .bg-cyan-50\/60, .bg-cyan-50\/40, .bg-cyan-50) {
+  background-color: rgb(203 226 243 / 0.84) !important;
+}
+
+.site-surface :is(.border-cyan-200, .border-cyan-300) {
+  border-color: rgb(121 184 222 / 0.64) !important;
+}
+
+.site-surface :is(.text-cyan-900, .text-cyan-800, .text-cyan-700) {
+  color: #0a6488 !important;
+}
+
+.site-surface input,
+.site-surface textarea {
+  background-color: rgb(232 244 253 / 0.94);
+}
+
+.logo-plate {
+  border: 1px solid rgb(255 255 255 / 0.65);
+  background: linear-gradient(
+    165deg,
+    rgb(255 255 255 / 0.95) 0%,
+    rgb(231 245 255 / 0.92) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.92),
+    0 10px 26px rgb(8 31 56 / 0.28);
+}
+
+@media (min-width: 640px) {
+  .content-block {
+    padding-inline: 1.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-in {
+    animation: none;
+  }
+
+  .bubble-hover::before,
+  .bubble-hover::after {
+    display: none;
+  }
+}

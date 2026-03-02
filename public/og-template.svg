@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="120" y1="60" x2="980" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#082F49"/>
+      <stop offset="0.55" stop-color="#0C4A6E"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <radialGradient id="sparkA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(220 130) rotate(40) scale(350)">
+      <stop stop-color="#7DD3FC" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#7DD3FC" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sparkB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(910 170) rotate(24) scale(220)">
+      <stop stop-color="#FDE68A" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FDE68A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g1)"/>
+  <circle cx="220" cy="130" r="210" fill="url(#sparkA)"/>
+  <circle cx="910" cy="170" r="190" fill="url(#sparkB)"/>
+  <text x="86" y="124" fill="#CFFAFE" font-size="34" font-family="sans-serif" letter-spacing="0.24em">MOCHI MEDAKA</text>
+  <text x="86" y="370" fill="white" font-size="92" font-family="sans-serif" font-weight="700">もちめだか</text>
+  <text x="86" y="444" fill="#E0F2FE" font-size="38" font-family="sans-serif">ラメの輝きと、だるま体型の愛嬌。どっちも本気。</text>
+</svg>
