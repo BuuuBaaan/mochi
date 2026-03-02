@@ -56,7 +56,7 @@ const actionCards = [
     href: siteConfig.social.youtube,
     external: true,
     cardClass:
-      "border-[#66d8dc]/60 bg-[linear-gradient(155deg,rgba(234,252,255,0.9),rgba(214,243,250,0.88)_58%,rgba(220,235,255,0.9))]",
+      "border-[var(--home-action-movie-border)] bg-[var(--home-action-movie-bg)]",
   },
   {
     kicker: "SOCIAL",
@@ -65,7 +65,7 @@ const actionCards = [
     href: siteConfig.social.instagram,
     external: true,
     cardClass:
-      "border-[#8dafe9]/60 bg-[linear-gradient(155deg,rgba(241,247,255,0.92),rgba(226,236,255,0.9)_56%,rgba(236,232,255,0.88))]",
+      "border-[var(--home-action-social-border)] bg-[var(--home-action-social-bg)]",
   },
   {
     kicker: "AUCTION",
@@ -74,7 +74,7 @@ const actionCards = [
     href: siteConfig.social.yahooAuctions,
     external: true,
     cardClass:
-      "border-[#f3c75f]/65 bg-[linear-gradient(155deg,rgba(255,248,226,0.92),rgba(255,239,197,0.9)_54%,rgba(255,231,178,0.88))]",
+      "border-[var(--home-action-auction-border)] bg-[var(--home-action-auction-bg)]",
   },
   {
     kicker: "FAQ",
@@ -83,7 +83,7 @@ const actionCards = [
     href: "/faq",
     external: false,
     cardClass:
-      "border-[#8f87d1]/55 bg-[linear-gradient(155deg,rgba(245,243,255,0.92),rgba(232,236,255,0.9)_56%,rgba(227,242,255,0.9))]",
+      "border-[var(--home-action-faq-border)] bg-[var(--home-action-faq-bg)]",
   },
 ];
 
@@ -105,8 +105,8 @@ export default async function Home() {
         />
         <div className="layout-shell grid w-full gap-10 content-block md:grid-cols-[1.2fr_0.8fr] md:items-center">
           <div>
-            <div className="rise-in inline-flex items-center gap-3 rounded-full border border-[#f3c85b]/55 bg-[#f6c93d]/14 px-4 py-2 backdrop-blur-sm">
-              <span className="font-ui text-[11px] font-semibold tracking-[0.2em] text-[#ffe7a1] [text-shadow:0_2px_8px_rgba(5,17,32,0.75)]">
+            <div className="rise-in inline-flex items-center gap-3 rounded-full border border-[var(--home-hero-capsule-border)] bg-[var(--home-hero-capsule-bg)] px-4 py-2 backdrop-blur-sm">
+              <span className="font-ui text-[11px] font-semibold tracking-[0.2em] text-[var(--home-hero-capsule-text)] [text-shadow:0_2px_8px_rgba(5,17,32,0.75)]">
                 MOCHIMEDAKA OFFICIAL
               </span>
               <span className="inline-flex h-9 w-9 items-center justify-center">
@@ -122,7 +122,7 @@ export default async function Home() {
             <p className="font-ui on-dark-eyebrow rise-in mt-4 text-xs font-semibold uppercase tracking-[0.3em]">
               Aquatic Craft
             </p>
-            <h1 className="font-display on-dark-title rise-in rise-delay-1 mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
+            <h1 className="font-brand on-dark-title rise-in rise-delay-1 mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
               ラメの煌めきと、強さのある育成個体を。
             </h1>
             <p className="on-dark-copy rise-in rise-delay-2 mt-5 max-w-2xl text-base leading-8">
@@ -133,10 +133,10 @@ export default async function Home() {
               <CtaButton href={siteConfig.social.yahooAuctions} target="_blank" rel="noreferrer">
                 出品中を見に行く（ヤフオク）
               </CtaButton>
-              <CtaButton href="/goods" variant="ghost" className="ring-[#f6cc63]/45 bg-white/12 text-[#f3fbff] hover:bg-white/20">
+              <CtaButton href="/goods" variant="ghost">
                 物販を見る
               </CtaButton>
-              <CtaButton href="/shop" variant="ghost" className="ring-[#f6cc63]/45 bg-white/12 text-[#f3fbff] hover:bg-white/20">
+              <CtaButton href="/shop" variant="ghost">
                 購入の流れを確認
               </CtaButton>
             </div>
@@ -146,15 +146,15 @@ export default async function Home() {
             <ul className="on-dark-copy mt-4 space-y-3 text-sm leading-7">
               {trustPoints.map((point) => (
                 <li key={point} className="flex gap-2">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-[#ffd15c]" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-[var(--home-trust-dot)]" />
                   <span>{point}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-6 flex flex-wrap gap-2">
-              <Badge className="border-[#f7cf67]/45 bg-[#f7c841]/15 text-[#fff1c8]">迅速発送</Badge>
-              <Badge className="border-[#f7cf67]/45 bg-[#f7c841]/15 text-[#fff1c8]">初心者歓迎</Badge>
-              <Badge className="border-[#f7cf67]/45 bg-[#f7c841]/15 text-[#fff1c8]">動画公開</Badge>
+              <Badge className="border-[var(--hero-badge-border)] bg-[var(--hero-badge-bg)] text-[var(--hero-badge-text)]">迅速発送</Badge>
+              <Badge className="border-[var(--hero-badge-border)] bg-[var(--hero-badge-bg)] text-[var(--hero-badge-text)]">初心者歓迎</Badge>
+              <Badge className="border-[var(--hero-badge-border)] bg-[var(--hero-badge-bg)] text-[var(--hero-badge-text)]">動画公開</Badge>
             </div>
           </div>
         </div>
@@ -166,8 +166,8 @@ export default async function Home() {
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(84,209,214,0.2),transparent_32%),radial-gradient(circle_at_88%_82%,rgba(241,191,61,0.18),transparent_30%),linear-gradient(180deg,rgba(243,251,255,0.92),rgba(232,245,253,0.92))]"
         />
         <div className="layout-shell w-full content-block">
-          <div className="relative rounded-[2rem] border border-[#a2c9e1]/70 bg-[linear-gradient(155deg,rgba(251,255,255,0.88),rgba(238,248,255,0.9)_52%,rgba(233,246,255,0.88))] p-6 shadow-[0_18px_44px_rgba(9,35,58,0.14)] md:p-8">
-            <p className="mb-5 font-ui text-xs font-semibold uppercase tracking-[0.24em] text-[#2e6f96]">Quick Actions</p>
+          <div className="relative rounded-[2rem] border border-[var(--home-quick-panel-border)] bg-[var(--home-quick-panel-bg)] p-6 shadow-[0_18px_44px_rgba(9,35,58,0.14)] md:p-8">
+            <p className="mb-5 font-ui text-xs font-semibold uppercase tracking-[0.24em] text-[var(--home-quick-panel-kicker)]">Quick Actions</p>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {actionCards.map((action) => (
               <Link
@@ -177,12 +177,12 @@ export default async function Home() {
                 rel={action.external ? "noreferrer" : undefined}
                 className={`action-tile group block rounded-2xl border p-5 shadow-[0_14px_30px_rgba(11,38,62,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_40px_rgba(11,38,62,0.18)] ${action.cardClass}`}
               >
-                <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.18em] text-[#32678d]">{action.kicker}</p>
-                <h2 className="font-display mt-2 text-lg font-semibold tracking-tight text-[#102f4b]">{action.title}</h2>
-                <p className="mt-2 text-sm leading-7 text-[#2b506d]">{action.body}</p>
+                <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--home-action-kicker)]">{action.kicker}</p>
+                <h2 className="font-display mt-2 text-lg font-semibold tracking-tight text-[var(--home-action-title)]">{action.title}</h2>
+                <p className="mt-2 text-sm leading-7 text-[var(--home-action-body)]">{action.body}</p>
                 <div className="mt-5 inline-flex items-center gap-2">
-                  <span className="font-ui text-xs font-semibold tracking-[0.12em] text-[#4f2f10]">MOVE</span>
-                  <span className="text-sm font-semibold text-[#4f2f10]">→</span>
+                  <span className="font-ui text-xs font-semibold tracking-[0.12em] text-[var(--home-action-move)]">MOVE</span>
+                  <span className="text-sm font-semibold text-[var(--home-action-move)]">→</span>
                 </div>
               </Link>
             ))}
@@ -210,16 +210,16 @@ export default async function Home() {
                 <>
                 <span
                     aria-disabled="true"
-                    className="font-ui inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold tracking-[0.03em] text-[#eff8ff]"
+                    className="font-ui inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold tracking-[0.03em] text-[var(--text-inverse)]"
                   >
                     Amazon準備中
                   </span>
-                  <CtaButton href="/contact" variant="ghost" className="ring-[#f6cc63]/45 bg-white/12 text-[#f3fbff] hover:bg-white/20">
+                  <CtaButton href="/contact" variant="ghost">
                     入荷通知を問い合わせる
                   </CtaButton>
                 </>
               )}
-              <CtaButton href="/goods" variant="ghost" className="ring-[#f6cc63]/45 bg-white/12 text-[#f3fbff] hover:bg-white/20">
+              <CtaButton href="/goods" variant="ghost">
                 物販一覧を見る
               </CtaButton>
             </div>
@@ -243,7 +243,7 @@ export default async function Home() {
                 <Link
                   key={tab.href}
                   href={tab.href}
-                  className="font-ui bubble-hover rounded-full border border-white/35 bg-white/12 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[#edf9ff] transition hover:bg-white/20"
+                  className="font-ui bubble-hover rounded-full border border-white/35 bg-white/12 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[var(--home-goods-subtle-text)] transition hover:bg-white/20"
                 >
                   {tab.label}
                 </Link>

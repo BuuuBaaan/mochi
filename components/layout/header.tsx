@@ -38,10 +38,10 @@ export function Header() {
             />
           </span>
           <span className="hidden sm:block">
-            <span className="font-display block text-[1.18rem] font-semibold tracking-[0.05em] text-white">
+            <span className="font-brand block text-[1.18rem] font-semibold tracking-[0.05em] text-white">
               {siteConfig.name}
             </span>
-            <span className="font-ui block text-[11px] tracking-[0.2em] text-[#ffe7a1]">OFFICIAL SITE</span>
+            <span className="font-ui block text-[11px] tracking-[0.2em] text-[var(--header-brand-subtext)]">OFFICIAL SITE</span>
           </span>
         </Link>
 
@@ -67,8 +67,8 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "font-ui rounded-full border border-white/28 bg-white/78 px-3 py-2 text-sm font-semibold tracking-[0.03em] text-[#4f2f10] transition hover:bg-white/92 focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:outline-none",
-                  isActive(pathname, item.href) && "border-[#f2c854]/70 bg-[#fff1cb]",
+                  "font-ui rounded-full border border-[var(--header-nav-border)] bg-[var(--header-nav-bg)] px-3 py-2 text-sm font-semibold tracking-[0.03em] text-[var(--header-nav-text)] transition hover:bg-[var(--header-nav-hover-bg)] focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:outline-none",
+                  isActive(pathname, item.href) && "border-[var(--header-nav-active-border)] bg-[var(--header-nav-active-bg)]",
                 )}
               >
                 {item.label}
@@ -79,7 +79,7 @@ export function Header() {
             href={siteConfig.social.yahooAuctions}
             target="_blank"
             rel="noreferrer"
-            className="font-ui bubble-hover rounded-full border border-[#f6cb61]/70 bg-[linear-gradient(136deg,#f6d447,#f2bb21_45%,#e78717)] px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[#4f2f10] shadow-[0_12px_24px_rgba(104,70,13,0.34)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4ce72]/80"
+            className="font-ui bubble-hover rounded-full border border-[var(--header-auction-border)] bg-[var(--header-auction-bg)] px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[var(--header-auction-text)] shadow-[var(--header-auction-shadow)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--header-auction-ring)]"
           >
             出品中を見る
           </Link>
@@ -88,12 +88,12 @@ export function Header() {
               href={amazonStoreUrl}
               target="_blank"
               rel="noreferrer"
-              className="font-ui bubble-hover rounded-full border border-white/34 bg-white/80 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[#4f2f10] transition hover:bg-white/92 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+              className="font-ui bubble-hover rounded-full border border-[var(--header-utility-border)] bg-[var(--header-utility-bg)] px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[var(--header-utility-text)] transition hover:bg-[var(--header-nav-hover-bg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
             >
               Amazonページへ
             </Link>
           ) : (
-            <span className="font-ui rounded-full border border-white/30 bg-white/70 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[#4f2f10]/75">
+            <span className="font-ui rounded-full border border-[var(--header-utility-border)] bg-[var(--header-utility-bg)] px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[var(--header-pending-text)]">
               Amazon準備中
             </span>
           )}
@@ -114,8 +114,8 @@ export function Header() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "font-ui rounded-lg border border-white/30 bg-white/80 px-3 py-2 text-sm font-semibold tracking-[0.03em] text-[#4f2f10]",
-                  isActive(pathname, item.href) && "border-[#f2c854]/70 bg-[#fff1cb]",
+                  "font-ui rounded-lg border border-[var(--header-nav-border)] bg-[var(--header-nav-bg)] px-3 py-2 text-sm font-semibold tracking-[0.03em] text-[var(--header-nav-text)]",
+                  isActive(pathname, item.href) && "border-[var(--header-nav-active-border)] bg-[var(--header-nav-active-bg)]",
                 )}
               >
                 {item.label}
@@ -126,14 +126,14 @@ export function Header() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="font-ui bubble-hover mt-2 rounded-lg border border-[#f6cb61]/70 bg-[linear-gradient(136deg,#f6d447,#f2bb21_45%,#e78717)] px-3 py-2 text-center text-sm font-semibold tracking-[0.03em] text-[#4f2f10]"
+              className="font-ui bubble-hover mt-2 rounded-lg border border-[var(--header-auction-border)] bg-[var(--header-auction-bg)] px-3 py-2 text-center text-sm font-semibold tracking-[0.03em] text-[var(--header-auction-text)]"
             >
               出品中を見に行く（ヤフオク）
             </Link>
             <Link
               href={amazonStoreUrl ?? "/goods"}
               onClick={() => setOpen(false)}
-              className="font-ui bubble-hover rounded-lg border border-white/30 bg-white/80 px-3 py-2 text-center text-sm font-semibold tracking-[0.03em] text-[#4f2f10]"
+              className="font-ui bubble-hover rounded-lg border border-[var(--header-utility-border)] bg-[var(--header-utility-bg)] px-3 py-2 text-center text-sm font-semibold tracking-[0.03em] text-[var(--header-utility-text)]"
             >
               {amazonStoreUrl ? "Amazonページへ" : "Amazon準備中（物販ページへ）"}
             </Link>

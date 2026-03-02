@@ -23,7 +23,7 @@ export function PageHero({ eyebrow, title, description, badges = [], actions }: 
       />
       <div className="layout-shell w-full content-block">
         <p className="font-ui on-dark-eyebrow text-xs font-semibold uppercase tracking-[0.28em]">{eyebrow}</p>
-        <h1 className="font-display on-dark-title mt-4 text-4xl font-bold leading-[1.24] sm:text-5xl">
+        <h1 className="font-brand on-dark-title mt-4 text-4xl font-bold leading-[1.24] sm:text-5xl">
           {title}
         </h1>
         <p className="on-dark-copy mt-5 max-w-3xl text-sm leading-8 sm:text-base">{description}</p>
@@ -32,7 +32,7 @@ export function PageHero({ eyebrow, title, description, badges = [], actions }: 
             {badges.map((badge) => (
               <Badge
                 key={badge}
-                className="border-[#f9cf64]/45 bg-[#f7c941]/15 text-[#fff1c6]"
+                className="border-[var(--hero-badge-border)] bg-[var(--hero-badge-bg)] text-[var(--hero-badge-text)]"
               >
                 {badge}
               </Badge>

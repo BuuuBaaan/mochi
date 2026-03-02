@@ -41,9 +41,90 @@
 
   --layout-max: 84rem;
 
-  --font-body: var(--font-sans-jp), "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", sans-serif;
-  --font-display: var(--font-display-jp), "Yu Mincho", "Hiragino Mincho ProN", serif;
-  --font-ui: var(--font-ui-latin), var(--font-sans-jp), "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-brand: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --font-heading: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --font-body: "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", sans-serif;
+  --font-ui: "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", sans-serif;
+  --font-numeric: "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", sans-serif;
+  --font-display: var(--font-heading);
+
+  --cta-primary-border: rgb(142 197 230 / 0.45);
+  --cta-primary-bg: linear-gradient(136deg, #0a3860, #115284 52%, #1870a0);
+  --cta-primary-text: #f4faff;
+  --cta-primary-ring: rgb(162 223 240 / 0.8);
+  --cta-primary-shadow: 0 14px 28px rgba(11, 46, 79, 0.34);
+
+  --cta-secondary-border: rgb(241 194 110 / 0.72);
+  --cta-secondary-bg: linear-gradient(136deg, #7e4608, #9d5b10 44%, #be7618);
+  --cta-secondary-text: #f4faff;
+  --cta-secondary-ring: rgb(243 207 132 / 0.8);
+  --cta-secondary-shadow: 0 12px 24px rgba(74, 42, 10, 0.34);
+
+  --cta-ghost-border: rgb(140 200 230 / 0.56);
+  --cta-ghost-bg: linear-gradient(136deg, rgba(9, 45, 73, 0.92), rgba(13, 69, 105, 0.9) 55%, rgba(18, 90, 127, 0.88));
+  --cta-ghost-text: #f4faff;
+  --cta-ghost-ring: rgb(164 223 240 / 0.85);
+  --cta-ghost-shadow: 0 10px 22px rgba(8, 39, 67, 0.3);
+
+  --badge-border: rgb(159 198 224 / 0.85);
+  --badge-bg: rgb(255 255 255 / 0.75);
+  --badge-text: #16486f;
+  --badge-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
+
+  --hero-badge-border: rgb(249 207 100 / 0.45);
+  --hero-badge-bg: rgb(247 201 65 / 0.15);
+  --hero-badge-text: #fff1c6;
+
+  --breadcrumb-border: rgb(158 194 218 / 0.8);
+  --breadcrumb-bg: rgb(255 255 255 / 0.68);
+  --breadcrumb-text: #315a7b;
+  --breadcrumb-shadow: 0 10px 24px rgba(8, 33, 57, 0.08);
+  --breadcrumb-separator: #6f8ea7;
+  --breadcrumb-link-hover: #143f64;
+  --breadcrumb-current: #103d62;
+
+  --header-brand-subtext: #ffe7a1;
+  --header-nav-border: rgb(255 255 255 / 0.28);
+  --header-nav-bg: rgb(255 255 255 / 0.78);
+  --header-nav-text: #4f2f10;
+  --header-nav-hover-bg: rgb(255 255 255 / 0.92);
+  --header-nav-active-border: rgb(242 200 84 / 0.7);
+  --header-nav-active-bg: #fff1cb;
+  --header-auction-border: rgb(246 203 97 / 0.7);
+  --header-auction-bg: linear-gradient(136deg, #f6d447, #f2bb21 45%, #e78717);
+  --header-auction-text: #4f2f10;
+  --header-auction-shadow: 0 12px 24px rgba(104, 70, 13, 0.34);
+  --header-auction-ring: rgb(244 206 114 / 0.8);
+  --header-utility-border: rgb(255 255 255 / 0.34);
+  --header-utility-bg: rgb(255 255 255 / 0.8);
+  --header-utility-text: #4f2f10;
+  --header-pending-text: rgb(79 47 16 / 0.75);
+
+  --logo-plate-border: rgb(120 204 232 / 0.6);
+  --logo-plate-bg: linear-gradient(164deg, rgb(8 41 67 / 0.74) 0%, rgb(13 69 101 / 0.64) 100%);
+  --logo-plate-shine: radial-gradient(circle at 30% 26%, rgb(216 244 255 / 0.32), transparent 58%);
+  --logo-plate-shadow: 0 12px 30px rgb(8 35 61 / 0.32);
+
+  --home-hero-capsule-border: rgb(243 200 91 / 0.55);
+  --home-hero-capsule-bg: rgb(246 201 61 / 0.14);
+  --home-hero-capsule-text: #ffe7a1;
+  --home-trust-dot: #ffd15c;
+  --home-quick-panel-border: rgb(162 201 225 / 0.7);
+  --home-quick-panel-bg: linear-gradient(155deg, rgba(251, 255, 255, 0.88), rgba(238, 248, 255, 0.9) 52%, rgba(233, 246, 255, 0.88));
+  --home-quick-panel-kicker: #2e6f96;
+  --home-action-kicker: #32678d;
+  --home-action-title: #102f4b;
+  --home-action-body: #2b506d;
+  --home-action-move: #4f2f10;
+  --home-action-movie-border: rgb(102 216 220 / 0.6);
+  --home-action-movie-bg: linear-gradient(155deg, rgba(234, 252, 255, 0.9), rgba(214, 243, 250, 0.88) 58%, rgba(220, 235, 255, 0.9));
+  --home-action-social-border: rgb(141 175 233 / 0.6);
+  --home-action-social-bg: linear-gradient(155deg, rgba(241, 247, 255, 0.92), rgba(226, 236, 255, 0.9) 56%, rgba(236, 232, 255, 0.88));
+  --home-action-auction-border: rgb(243 199 95 / 0.65);
+  --home-action-auction-bg: linear-gradient(155deg, rgba(255, 248, 226, 0.92), rgba(255, 239, 197, 0.9) 54%, rgba(255, 231, 178, 0.88));
+  --home-action-faq-border: rgb(143 135 209 / 0.55);
+  --home-action-faq-bg: linear-gradient(155deg, rgba(245, 243, 255, 0.92), rgba(232, 236, 255, 0.9) 56%, rgba(227, 242, 255, 0.9));
+  --home-goods-subtle-text: #edf9ff;
 }
 
 @theme inline {
@@ -107,7 +188,11 @@ a {
 
 ::selection {
   background: color-mix(in oklab, var(--accent-mint), white 24%);
-  color: #082136;
+  color: var(--text-selection);
+}
+
+.font-brand {
+  font-family: var(--font-brand);
 }
 
 .font-display {
@@ -119,7 +204,7 @@ a {
 }
 
 .numeral {
-  font-family: var(--font-ui);
+  font-family: var(--font-numeric);
   font-variant-numeric: tabular-nums;
 }
 
@@ -640,17 +725,11 @@ a {
 }
 
 .logo-plate {
-  border: 1px solid rgb(120 204 232 / 0.6);
-  background:
-    radial-gradient(circle at 30% 26%, rgb(216 244 255 / 0.32), transparent 58%),
-    linear-gradient(
-    164deg,
-    rgb(8 41 67 / 0.74) 0%,
-    rgb(13 69 101 / 0.64) 100%
-  );
+  border: 1px solid var(--logo-plate-border);
+  background: var(--logo-plate-shine), var(--logo-plate-bg);
   box-shadow:
     inset 0 1px 0 rgb(255 255 255 / 0.26),
-    0 12px 30px rgb(8 35 61 / 0.32);
+    var(--logo-plate-shadow);
 }
 
 @media (min-width: 640px) {

@@ -14,11 +14,11 @@ type CtaButtonProps = {
 
 const variantStyles: Record<NonNullable<CtaButtonProps["variant"]>, string> = {
   primary:
-    "border border-[#8ec5e6]/45 bg-[linear-gradient(136deg,#0a3860,#115284_52%,#1870a0)] text-[#f4faff] shadow-[0_14px_28px_rgba(11,46,79,0.34)] hover:brightness-105 focus-visible:ring-[#a2dff0]/80",
+    "border border-[var(--cta-primary-border)] bg-[var(--cta-primary-bg)] text-[var(--cta-primary-text)] shadow-[var(--cta-primary-shadow)] hover:brightness-105 focus-visible:ring-[var(--cta-primary-ring)]",
   secondary:
-    "border border-[#f1c26e]/72 bg-[linear-gradient(136deg,#7e4608,#9d5b10_44%,#be7618)] text-[#f4faff] shadow-[0_12px_24px_rgba(74,42,10,0.34)] hover:brightness-105 focus-visible:ring-[#f3cf84]/80",
+    "border border-[var(--cta-secondary-border)] bg-[var(--cta-secondary-bg)] text-[var(--cta-secondary-text)] shadow-[var(--cta-secondary-shadow)] hover:brightness-105 focus-visible:ring-[var(--cta-secondary-ring)]",
   ghost:
-    "border border-[#8cc8e6]/56 bg-[linear-gradient(136deg,rgba(9,45,73,0.92),rgba(13,69,105,0.9)_55%,rgba(18,90,127,0.88))] text-[#f4faff] shadow-[0_10px_22px_rgba(8,39,67,0.3)] hover:brightness-105 focus-visible:ring-[#a4dff0]/85",
+    "border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] text-[var(--cta-ghost-text)] shadow-[var(--cta-ghost-shadow)] hover:brightness-105 focus-visible:ring-[var(--cta-ghost-ring)]",
 };
 
 export function CtaButton({

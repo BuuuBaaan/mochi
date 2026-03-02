@@ -133,8 +133,8 @@ export default async function GoodsDetailPage({ params }: GoodsDetailPageProps) 
               href={`/goods/${tabProduct.slug}`}
                 className={`bubble-hover rounded-full border px-4 py-2 text-sm font-semibold transition ${
                 tabProduct.slug === product.slug
-                  ? "border-[#8ec5e6]/70 bg-[linear-gradient(132deg,#0b416c,#125b8f_50%,#1a7daf)] text-[#f4faff] shadow-[0_10px_22px_rgba(8,36,61,0.24)]"
-                  : "border-[#8ec5e6]/55 bg-[linear-gradient(132deg,rgba(9,45,73,0.82),rgba(14,70,106,0.8)_56%,rgba(18,89,126,0.76))] text-[#dff5ff] hover:brightness-105"
+                  ? "border-[var(--cta-primary-border)] bg-[var(--cta-primary-bg)] text-[var(--cta-primary-text)] shadow-[var(--cta-primary-shadow)]"
+                  : "border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] text-[var(--cta-ghost-text)] hover:brightness-105"
               }`}
             >
               {tabProduct.name}

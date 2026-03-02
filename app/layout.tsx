@@ -1,36 +1,15 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Outfit, Shippori_Mincho } from "next/font/google";
 
 import { Analytics } from "@/components/analytics";
 import { SiteShell } from "@/components/layout/site-shell";
+import { buildThemeCssVariables } from "@/lib/theme/css-variables";
+import { themeFontVariableClasses } from "@/lib/theme/fonts";
 import { JsonLd } from "@/lib/json-ld";
 import { absoluteUrl } from "@/lib/utils";
 import { normalizeExternalUrl } from "@/lib/commerce";
 import { siteConfig } from "@/site.config";
 
 import "./globals.css";
-
-const notoSansJp = Noto_Sans_JP({
-  variable: "--font-sans-jp",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-  preload: true,
-});
-
-const shipporiMincho = Shippori_Mincho({
-  variable: "--font-display-jp",
-  weight: ["500", "600", "700", "800"],
-  display: "swap",
-  preload: true,
-});
-
-const outfit = Outfit({
-  variable: "--font-ui-latin",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  display: "swap",
-  preload: true,
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -75,6 +54,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeCssVariables = buildThemeCssVariables();
   const amazonStore = normalizeExternalUrl(siteConfig.commerce.amazonStoreUrl);
 
   const orgSchema = {
@@ -102,8 +82,8 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="ja">
-      <body className={`${notoSansJp.variable} ${shipporiMincho.variable} ${outfit.variable} antialiased`}>
+    <html lang="ja" style={themeCssVariables}>
+      <body className={`${themeFontVariableClasses} antialiased`}>
         <JsonLd data={orgSchema} />
         <SiteShell>{children}</SiteShell>
         <Analytics />

@@ -91,11 +91,11 @@ export default function GoodsPage() {
               <Link
                 key={`goods-tab-${product.slug}`}
                 href={`/goods/${product.slug}`}
-                className="bubble-hover rounded-2xl border border-[#8bc6e5]/58 bg-[linear-gradient(141deg,rgba(9,44,71,0.9),rgba(14,72,109,0.88)_56%,rgba(18,93,132,0.84))] px-4 py-3 shadow-[0_12px_24px_rgba(8,36,61,0.2)] transition hover:-translate-y-0.5 hover:brightness-105"
+                className="bubble-hover rounded-2xl border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-4 py-3 shadow-[var(--cta-ghost-shadow)] transition hover:-translate-y-0.5 hover:brightness-105"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#d7f2ff]">注目商品</p>
-                <p className="mt-1 text-lg font-semibold text-[#f4faff]">{product.name}</p>
-                <p className="mt-1 text-sm leading-7 text-[#d9edf8]">{product.shortCatch}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--text-inverse)]">注目商品</p>
+                <p className="mt-1 text-lg font-semibold text-[var(--text-inverse)]">{product.name}</p>
+                <p className="mt-1 text-sm leading-7 text-[var(--text-inverse)]/90">{product.shortCatch}</p>
               </Link>
             ))}
           </div>
@@ -104,7 +104,7 @@ export default function GoodsPage() {
               <Link
                 key={tab.href}
                 href={tab.href}
-                className="bubble-hover rounded-full border border-[#8cc8e6]/56 bg-[linear-gradient(136deg,rgba(9,45,73,0.9),rgba(13,69,105,0.88)_55%,rgba(18,90,127,0.84))] px-4 py-2 text-sm font-semibold text-[#f4faff] shadow-[0_10px_22px_rgba(8,39,67,0.24)] transition hover:brightness-105"
+                className="bubble-hover rounded-full border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-4 py-2 text-sm font-semibold text-[var(--cta-ghost-text)] shadow-[var(--cta-ghost-shadow)] transition hover:brightness-105"
               >
                 {tab.label}
               </Link>

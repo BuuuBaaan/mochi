@@ -57,6 +57,96 @@
 - 商品情報: `commerce.products[]`（価格表示・画像・説明・FAQ含む）
 - ロゴ情報: `logo.src`, `logo.alt`
 
+## テーマ変更手順（フォント/色）
+
+テーマは **`theme.config.ts` だけ** を編集すれば変更できます。  
+実行時は `app/layout.tsx` が `lib/theme/*` 経由でテーマを読み込み、CSS変数へ反映します。
+
+### どこを編集すると何が変わるか
+
+- `theme.config.ts > fonts.brandHero`
+  - ブランド名やヒーロー大見出し（例: TOPのメインコピー）
+- `theme.config.ts > fonts.heading`
+  - セクション見出し、カード見出し
+- `theme.config.ts > fonts.body`
+  - 本文全般
+- `theme.config.ts > fonts.ui`
+  - ナビ、ボタン、ラベル
+- `theme.config.ts > fonts.monoOrNumeric`
+  - 数字系表示（`.numeral`）
+- `theme.config.ts > colors.background`
+  - ページ背景層（昼背景/夜背景）
+- `theme.config.ts > colors.surface`
+  - カードや帯の面色
+- `theme.config.ts > colors.text`
+  - 強調/標準/補助テキスト
+- `theme.config.ts > colors.primary`
+  - CTA主系色
+- `theme.config.ts > colors.accent`
+  - 演出色（泡・光など）
+- `theme.config.ts > colors.component.*`
+  - ボタン、ヘッダー、バッジなどUI部品の詳細色
+
+### フォント変更例（Google Font）
+
+`fonts.heading` を差し替える例:
+
+```ts
+heading: {
+  provider: "google",
+  family: "shipporiMincho",
+  fallback: "\"Yu Mincho\", \"Hiragino Mincho ProN\", serif",
+},
+```
+
+### フォント変更例（ローカルフォント）
+
+`next/font/local` に切り替える例:
+
+```ts
+brandHero: {
+  provider: "local",
+  family: "localSans",
+  fallback: "\"Yu Mincho\", \"Hiragino Mincho ProN\", serif",
+},
+```
+
+ローカルフォントの実ファイル差し替えは、以下を同名で上書きすれば反映されます。
+
+- `public/fonts/theme-placeholder/geist-latin.woff2`
+- `public/fonts/theme-placeholder/geist-mono-latin.woff2`
+
+### 背景変更例
+
+ページ全体の雰囲気を明るくする例:
+
+```ts
+colors: {
+  background: {
+    canvas: "#f3fbff",
+    canvasDeep: "#e4f2fb",
+    canvasMist: "#fbfeff",
+    night1: "#072340",
+    night2: "#0d3e68",
+    night3: "#176688",
+  },
+  // ...
+}
+```
+
+## テーマ反映の内部構成
+
+- `theme.config.ts`
+  - 型安全なテーマ本体
+- `lib/theme/types.ts`
+  - テーマ型定義（Google/localフォント両対応）
+- `lib/theme/fonts.ts`
+  - `next/font` ローダー（最適化込み）
+- `lib/theme/css-variables.ts`
+  - テーマ値をCSS変数へ変換
+- `app/layout.tsx`
+  - CSS変数とフォント変数を適用
+
 ## 環境変数
 
 `.env.example` をコピーして `.env.local` を作成してください。
