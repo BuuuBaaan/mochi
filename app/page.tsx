@@ -57,7 +57,6 @@ const actionCards = [
     external: true,
     cardClass:
       "border-[#66d8dc]/60 bg-[linear-gradient(155deg,rgba(234,252,255,0.9),rgba(214,243,250,0.88)_58%,rgba(220,235,255,0.9))]",
-    buttonVariant: "primary" as const,
   },
   {
     kicker: "SOCIAL",
@@ -67,7 +66,6 @@ const actionCards = [
     external: true,
     cardClass:
       "border-[#8dafe9]/60 bg-[linear-gradient(155deg,rgba(241,247,255,0.92),rgba(226,236,255,0.9)_56%,rgba(236,232,255,0.88))]",
-    buttonVariant: "ghost" as const,
   },
   {
     kicker: "AUCTION",
@@ -77,7 +75,6 @@ const actionCards = [
     external: true,
     cardClass:
       "border-[#f3c75f]/65 bg-[linear-gradient(155deg,rgba(255,248,226,0.92),rgba(255,239,197,0.9)_54%,rgba(255,231,178,0.88))]",
-    buttonVariant: "secondary" as const,
   },
   {
     kicker: "FAQ",
@@ -87,7 +84,6 @@ const actionCards = [
     external: false,
     cardClass:
       "border-[#8f87d1]/55 bg-[linear-gradient(155deg,rgba(245,243,255,0.92),rgba(232,236,255,0.9)_56%,rgba(227,242,255,0.9))]",
-    buttonVariant: "ghost" as const,
   },
 ];
 
@@ -113,17 +109,13 @@ export default async function Home() {
               <span className="font-ui text-[11px] font-semibold tracking-[0.2em] text-[#ffe7a1] [text-shadow:0_2px_8px_rgba(5,17,32,0.75)]">
                 MOCHIMEDAKA OFFICIAL
               </span>
-              <span className="relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-white/24 bg-white/8">
+              <span className="inline-flex h-9 w-9 items-center justify-center">
                 <Image
                   src={siteConfig.logo.src}
                   alt={siteConfig.logo.alt}
                   width={32}
                   height={32}
-                  className="h-7 w-7 rounded-full object-cover opacity-45 saturate-[0.65] contrast-90"
-                />
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_22%,rgba(255,255,255,0.28),transparent_55%)]"
+                  className="h-7 w-7 rounded-full object-cover opacity-42 saturate-[0.62] contrast-85"
                 />
               </span>
             </div>
@@ -186,29 +178,21 @@ export default async function Home() {
             </div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {actionCards.map((action) => (
-              <article
+              <Link
                 key={action.title}
-                className={`group rounded-2xl border p-5 shadow-[0_14px_30px_rgba(11,38,62,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_40px_rgba(11,38,62,0.18)] ${action.cardClass}`}
+                href={action.href}
+                target={action.external ? "_blank" : undefined}
+                rel={action.external ? "noreferrer" : undefined}
+                className={`action-tile group block rounded-2xl border p-5 shadow-[0_14px_30px_rgba(11,38,62,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_40px_rgba(11,38,62,0.18)] ${action.cardClass}`}
               >
                 <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.18em] text-[#32678d]">{action.kicker}</p>
                 <h2 className="font-display mt-2 text-lg font-semibold tracking-tight text-[#102f4b]">{action.title}</h2>
                 <p className="mt-2 text-sm leading-7 text-[#2b506d]">{action.body}</p>
-                <div className="mt-5 flex items-center justify-between gap-3">
-                  <span
-                    aria-hidden
-                    className="h-8 w-8 rounded-full border border-white/65 bg-[radial-gradient(circle_at_30%_28%,rgba(255,255,255,0.9),rgba(255,255,255,0.45)_56%,rgba(118,184,222,0.25))]"
-                  />
-                  <CtaButton
-                    href={action.href}
-                    variant={action.buttonVariant}
-                    target={action.external ? "_blank" : undefined}
-                    rel={action.external ? "noreferrer" : undefined}
-                    className="px-4 py-2"
-                  >
-                    開く
-                  </CtaButton>
+                <div className="mt-5 inline-flex items-center gap-2">
+                  <span className="font-ui text-xs font-semibold tracking-[0.12em] text-[#4f2f10]">MOVE</span>
+                  <span className="text-sm font-semibold text-[#4f2f10]">→</span>
                 </div>
-              </article>
+              </Link>
             ))}
             </div>
           </div>

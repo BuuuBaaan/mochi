@@ -26,7 +26,7 @@ export function Header() {
       <div className="layout-shell flex w-full items-center justify-between gap-3 px-4 py-3.5 sm:px-6">
         <Link
           href="/"
-          className="group inline-flex items-center gap-4 rounded-full px-2 py-1 outline-none transition hover:bg-white/8 focus-visible:ring-2 focus-visible:ring-cyan-300"
+          className="group inline-flex items-center gap-4 rounded-full px-2 py-1 outline-none transition hover:bg-white/12 focus-visible:ring-2 focus-visible:ring-cyan-300"
         >
           <span className="logo-plate inline-flex h-14 w-14 items-center justify-center rounded-full p-1.5 sm:h-[4.5rem] sm:w-[4.5rem]">
             <Image
@@ -41,7 +41,7 @@ export function Header() {
             <span className="font-display block text-[1.18rem] font-semibold tracking-[0.05em] text-white">
               {siteConfig.name}
             </span>
-            <span className="font-ui block text-[11px] tracking-[0.2em] text-cyan-100/90">OFFICIAL SITE</span>
+            <span className="font-ui block text-[11px] tracking-[0.2em] text-[#ffe7a1]">OFFICIAL SITE</span>
           </span>
         </Link>
 
@@ -67,8 +67,8 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "font-ui rounded-full px-3 py-2 text-sm font-semibold tracking-[0.03em] text-slate-100 transition hover:bg-white/14 hover:text-white focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:outline-none",
-                  isActive(pathname, item.href) && "border border-[#f2c854]/45 bg-white/20 text-[#fff4d0]",
+                  "font-ui rounded-full border border-white/28 bg-white/78 px-3 py-2 text-sm font-semibold tracking-[0.03em] text-[#4f2f10] transition hover:bg-white/92 focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:outline-none",
+                  isActive(pathname, item.href) && "border-[#f2c854]/70 bg-[#fff1cb]",
                 )}
               >
                 {item.label}
@@ -88,12 +88,12 @@ export function Header() {
               href={amazonStoreUrl}
               target="_blank"
               rel="noreferrer"
-              className="font-ui bubble-hover rounded-full border border-white/34 bg-white/12 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-white transition hover:bg-white/18 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+              className="font-ui bubble-hover rounded-full border border-white/34 bg-white/80 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[#4f2f10] transition hover:bg-white/92 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
             >
               Amazonページへ
             </Link>
           ) : (
-            <span className="font-ui rounded-full border border-white/25 bg-white/12 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-slate-300">
+            <span className="font-ui rounded-full border border-white/30 bg-white/70 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[#4f2f10]/75">
               Amazon準備中
             </span>
           )}
@@ -114,8 +114,8 @@ export function Header() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "font-ui rounded-lg px-3 py-2 text-sm font-semibold tracking-[0.03em] text-slate-100",
-                  isActive(pathname, item.href) && "bg-white/20 text-[#fff4d0]",
+                  "font-ui rounded-lg border border-white/30 bg-white/80 px-3 py-2 text-sm font-semibold tracking-[0.03em] text-[#4f2f10]",
+                  isActive(pathname, item.href) && "border-[#f2c854]/70 bg-[#fff1cb]",
                 )}
               >
                 {item.label}
@@ -133,7 +133,7 @@ export function Header() {
             <Link
               href={amazonStoreUrl ?? "/goods"}
               onClick={() => setOpen(false)}
-              className="font-ui bubble-hover rounded-lg border border-white/30 bg-white/12 px-3 py-2 text-center text-sm font-semibold tracking-[0.03em] text-white"
+              className="font-ui bubble-hover rounded-lg border border-white/30 bg-white/80 px-3 py-2 text-center text-sm font-semibold tracking-[0.03em] text-[#4f2f10]"
             >
               {amazonStoreUrl ? "Amazonページへ" : "Amazon準備中（物販ページへ）"}
             </Link>

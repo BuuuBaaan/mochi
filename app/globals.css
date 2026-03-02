@@ -288,6 +288,54 @@ a {
   animation: bubble-float-small 0.82s ease-out 0.08s;
 }
 
+.action-tile {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.action-tile::before {
+  content: "";
+  position: absolute;
+  inset: -40% -60%;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    112deg,
+    transparent 24%,
+    rgb(255 255 255 / 0.46) 44%,
+    rgb(137 214 242 / 0.28) 58%,
+    transparent 76%
+  );
+  transform: translateX(-42%);
+}
+
+.action-tile::after {
+  content: "";
+  position: absolute;
+  inset: auto 8% -26% auto;
+  width: 8.8rem;
+  height: 4.4rem;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 16% 84%, rgb(255 255 255 / 0.7) 0.2rem, transparent 0.22rem),
+    radial-gradient(circle at 38% 88%, rgb(226 248 255 / 0.74) 0.16rem, transparent 0.18rem),
+    radial-gradient(circle at 56% 82%, rgb(201 241 255 / 0.66) 0.2rem, transparent 0.22rem),
+    radial-gradient(circle at 74% 86%, rgb(232 250 255 / 0.7) 0.14rem, transparent 0.16rem),
+    radial-gradient(circle at 88% 78%, rgb(198 238 255 / 0.64) 0.18rem, transparent 0.2rem);
+}
+
+.action-tile:hover::before,
+.action-tile:focus-visible::before {
+  animation: tile-flow 1s ease-out both;
+}
+
+.action-tile:hover::after,
+.action-tile:focus-visible::after {
+  animation: tile-bubbles 1.15s ease-out both;
+}
+
 @keyframes bubble-float {
   0% {
     opacity: 0;
@@ -313,6 +361,34 @@ a {
   100% {
     opacity: 0;
     transform: translate3d(0.24rem, -1.9rem, 0) scale(1.06);
+  }
+}
+
+@keyframes tile-flow {
+  0% {
+    opacity: 0;
+    transform: translateX(-42%);
+  }
+  24% {
+    opacity: 0.72;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(38%);
+  }
+}
+
+@keyframes tile-bubbles {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.84);
+  }
+  22% {
+    opacity: 0.74;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0.2rem, -1.95rem, 0) scale(1.08);
   }
 }
 
@@ -504,7 +580,9 @@ a {
   }
 
   .bubble-hover::before,
-  .bubble-hover::after {
+  .bubble-hover::after,
+  .action-tile::before,
+  .action-tile::after {
     display: none;
   }
 }
