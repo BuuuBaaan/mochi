@@ -35,7 +35,7 @@ export function CtaButton({
       target={target}
       rel={rel}
       className={cn(
-        "font-ui bubble-hover inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold tracking-[0.04em] transition duration-300 focus-visible:ring-2 focus-visible:outline-none",
+        "font-ui cta-button bubble-hover inline-flex items-center justify-center rounded-[0.9rem] px-5 py-2.5 text-sm font-semibold tracking-[0.06em] transition duration-300 active:translate-y-px focus-visible:ring-2 focus-visible:outline-none [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]",
         variantStyles[variant],
         className,
       )}

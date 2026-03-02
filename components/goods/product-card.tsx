@@ -13,7 +13,7 @@ type ProductCardProps = {
 
 export function ProductCard({ product, compact = false }: ProductCardProps) {
   return (
-    <Card className="overflow-hidden border-white/24 bg-[linear-gradient(162deg,rgba(8,32,58,0.74),rgba(12,48,78,0.66)_58%,rgba(20,88,112,0.58))]">
+    <Card className="overflow-hidden border-[var(--line-strong)] bg-[linear-gradient(160deg,rgba(7,28,53,0.9),rgba(11,41,74,0.86)_58%,rgba(7,31,56,0.88))]">
       <Link href={`/goods/${product.slug}`} className="block">
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
@@ -28,10 +28,10 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
       <div className="space-y-4 p-5 sm:p-6">
         <div className="flex flex-wrap items-center gap-2">
           <Badge className="border-cyan-200/50 bg-cyan-100/15 text-cyan-50">{product.priceLabel}</Badge>
-          <Badge className="border-amber-200/40 bg-amber-200/10 text-amber-100">Amazon送客</Badge>
+          <Badge className="border-rose-200/45 bg-rose-200/14 text-rose-100">Amazon送客</Badge>
         </div>
 
-        <div className="bubble-hover rounded-2xl border border-white/18 bg-white/8 p-4">
+        <div className="bubble-hover bubble-size-lg rounded-[1.15rem] border border-white/18 bg-white/6 p-4">
           <h3 className="font-display text-2xl font-semibold tracking-tight text-white">
             <Link href={`/goods/${product.slug}`} className="hover:text-cyan-200">
               {product.name}
@@ -53,7 +53,7 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
           <AmazonCta url={product.amazonProductUrl} compact />
           <Link
             href={`/goods/${product.slug}`}
-            className="font-ui bubble-hover inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-white transition hover:bg-white/16 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+            className="font-ui cta-button bubble-hover bubble-size-md inline-flex items-center justify-center rounded-[0.75rem] border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-4 py-2 text-sm font-semibold tracking-[0.06em] text-[var(--cta-ghost-text)] shadow-[var(--cta-ghost-shadow)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]"
           >
             詳細を見る
           </Link>

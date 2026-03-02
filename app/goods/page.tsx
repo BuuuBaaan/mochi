@@ -64,7 +64,7 @@ export default function GoodsPage() {
               <>
                 <span
                   aria-disabled="true"
-                  className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold text-slate-200"
+                  className="inline-flex items-center rounded-[0.75rem] border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold text-slate-200 [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]"
                 >
                   {siteConfig.commerce.pendingCtaLabel}
                 </span>
@@ -85,13 +85,13 @@ export default function GoodsPage() {
           ]}
         />
 
-        <section className="mb-6 space-y-3 rounded-3xl border border-sky-200/75 bg-[linear-gradient(160deg,rgba(242,250,255,0.95),rgba(229,243,255,0.93)_62%,rgba(236,247,255,0.95))] p-5 shadow-[0_14px_30px_rgba(7,39,70,0.12)]">
+        <section className="mb-6 space-y-3 rounded-[1.55rem] border border-[var(--line-strong)] bg-[linear-gradient(160deg,rgba(7,25,48,0.9),rgba(11,37,68,0.88)_62%,rgba(8,24,46,0.9))] p-5 shadow-[0_18px_36px_rgba(0,8,22,0.44)]">
           <div className="grid gap-3 md:grid-cols-2">
             {goodsProducts.map((product) => (
               <Link
                 key={`goods-tab-${product.slug}`}
                 href={`/goods/${product.slug}`}
-                className="bubble-hover rounded-2xl border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-4 py-3 shadow-[var(--cta-ghost-shadow)] transition hover:-translate-y-0.5 hover:brightness-105"
+                className="bubble-hover bubble-size-lg rounded-[0.95rem] border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-4 py-3 shadow-[var(--cta-ghost-shadow)] transition hover:-translate-y-0.5 hover:brightness-105 [clip-path:polygon(0_0,100%_0,96%_100%,0_100%)]"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--text-inverse)]">注目商品</p>
                 <p className="mt-1 text-lg font-semibold text-[var(--text-inverse)]">{product.name}</p>
@@ -104,7 +104,7 @@ export default function GoodsPage() {
               <Link
                 key={tab.href}
                 href={tab.href}
-                className="bubble-hover rounded-full border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-4 py-2 text-sm font-semibold text-[var(--cta-ghost-text)] shadow-[var(--cta-ghost-shadow)] transition hover:brightness-105"
+                className="bubble-hover bubble-size-md rounded-[0.72rem] border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-4 py-2 text-sm font-semibold tracking-[0.05em] text-[var(--cta-ghost-text)] shadow-[var(--cta-ghost-shadow)] transition hover:brightness-105 [clip-path:polygon(0_0,100%_0,96%_100%,0_100%)]"
               >
                 {tab.label}
               </Link>

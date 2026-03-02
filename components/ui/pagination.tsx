@@ -25,7 +25,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         type="button"
         onClick={() => onPageChange(Math.max(1, currentPage - 1))}
         disabled={currentPage === 1}
-        className="font-ui bubble-hover rounded-xl border border-sky-300/75 bg-white/76 px-3 py-2 text-sm font-semibold tracking-[0.04em] text-slate-700 shadow-sm disabled:cursor-not-allowed disabled:opacity-40"
+        className="font-ui bubble-hover bubble-size-md rounded-[0.75rem] border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-3 py-2 text-sm font-semibold tracking-[0.06em] text-[var(--cta-ghost-text)] shadow-[var(--cta-ghost-shadow)] [clip-path:polygon(0_0,100%_0,94%_100%,0_100%)] disabled:cursor-not-allowed disabled:opacity-40"
       >
         前へ
       </button>
@@ -36,10 +36,10 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
           onClick={() => onPageChange(page)}
           aria-current={page === currentPage ? "page" : undefined}
           className={cn(
-            "font-ui bubble-hover rounded-xl px-3 py-2 text-sm font-semibold tracking-[0.04em] shadow-sm",
+            "font-ui bubble-hover bubble-size-md rounded-[0.75rem] px-3 py-2 text-sm font-semibold tracking-[0.06em] shadow-sm [clip-path:polygon(0_0,100%_0,94%_100%,0_100%)]",
             page === currentPage
-              ? "bg-[linear-gradient(136deg,#0e3f6b,#14588f_52%,#1b71a0)] text-white"
-              : "border border-sky-300/75 bg-white/76 text-slate-700 hover:bg-white",
+              ? "border border-[var(--cta-primary-border)] bg-[var(--cta-primary-bg)] text-[var(--cta-primary-text)]"
+              : "border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] text-[var(--cta-ghost-text)] hover:brightness-110",
           )}
         >
           {page}
@@ -49,7 +49,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         type="button"
         onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
         disabled={currentPage === totalPages}
-        className="font-ui bubble-hover rounded-xl border border-sky-300/75 bg-white/76 px-3 py-2 text-sm font-semibold tracking-[0.04em] text-slate-700 shadow-sm disabled:cursor-not-allowed disabled:opacity-40"
+        className="font-ui bubble-hover bubble-size-md rounded-[0.75rem] border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-3 py-2 text-sm font-semibold tracking-[0.06em] text-[var(--cta-ghost-text)] shadow-[var(--cta-ghost-shadow)] [clip-path:polygon(0_0,100%_0,94%_100%,0_100%)] disabled:cursor-not-allowed disabled:opacity-40"
       >
         次へ
       </button>

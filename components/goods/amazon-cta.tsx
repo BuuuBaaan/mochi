@@ -31,7 +31,7 @@ export function AmazonCta({ url, readyLabel, className, compact = false }: Amazo
       <span
         aria-disabled="true"
         className={cn(
-          "font-ui inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/72 px-4 text-sm font-semibold tracking-[0.03em] text-slate-500",
+          "font-ui inline-flex items-center justify-center rounded-[0.75rem] border border-[var(--line-soft)] bg-white/8 px-4 text-sm font-semibold tracking-[0.06em] text-[var(--header-pending-text)] [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]",
           compact ? "py-2" : "py-2.5",
         )}
       >

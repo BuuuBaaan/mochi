@@ -65,12 +65,12 @@ export function FilterableGrid({
             setCurrentPage(1);
           }}
           placeholder={`${typeLabel}をタイトル・タグで検索`}
-          className="font-ui w-full rounded-2xl border border-sky-300/75 bg-white/82 px-4 py-3 text-sm tracking-[0.02em] text-slate-900 shadow-[0_12px_28px_rgba(7,39,70,0.11)] outline-none transition focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
+          className="font-ui w-full rounded-[1rem] border border-[var(--line-strong)] bg-[linear-gradient(152deg,rgba(8,27,52,0.88),rgba(11,37,67,0.86)_56%,rgba(9,28,53,0.88))] px-4 py-3 text-sm tracking-[0.03em] text-[var(--text-strong)] shadow-[0_14px_30px_rgba(1,9,24,0.42)] outline-none transition focus:border-cyan-400 focus:ring-2 focus:ring-cyan-200"
         />
       </div>
 
       {filtered.length === 0 ? (
-        <p className="rounded-xl border border-slate-200 bg-white p-6 text-sm text-slate-700">
+        <p className="rounded-[1rem] border border-[var(--line-soft)] bg-white/8 p-6 text-sm text-[var(--text-default)]">
           {emptyLabel}
         </p>
       ) : (
@@ -95,7 +95,7 @@ export function FilterableGrid({
                 <div className="mt-5">
                   <Link
                     href={item.href}
-                    className="font-ui bubble-hover inline-flex rounded-full border border-sky-300/70 bg-white/70 px-3 py-1.5 text-sm font-semibold tracking-[0.03em] text-cyan-800 transition hover:bg-white"
+                    className="font-ui cta-button bubble-hover bubble-size-md inline-flex rounded-[0.75rem] border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-3 py-1.5 text-sm font-semibold tracking-[0.06em] text-[var(--cta-ghost-text)] transition hover:brightness-105 [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]"
                   >
                     詳細を見る →
                   </Link>
