@@ -10,6 +10,7 @@ type CtaButtonProps = {
   target?: "_blank" | "_self";
   rel?: string;
   variant?: "primary" | "secondary" | "ghost";
+  trackingId?: string;
 };
 
 const variantStyles: Record<NonNullable<CtaButtonProps["variant"]>, string> = {
@@ -28,14 +29,21 @@ export function CtaButton({
   target,
   rel,
   variant = "primary",
+  trackingId,
 }: CtaButtonProps) {
+  const safeRel = target === "_blank" && !rel ? "noreferrer" : rel;
+
   return (
     <Link
       href={href}
       target={target}
-      rel={rel}
+      rel={safeRel}
+      data-track-event="cta_click"
+      data-track-label={trackingId}
+      data-track-href={href}
+      data-track-variant={variant}
       className={cn(
-        "font-ui cta-button bubble-hover inline-flex items-center justify-center rounded-[0.9rem] px-5 py-2.5 text-sm font-semibold tracking-[0.06em] transition duration-300 active:translate-y-px focus-visible:ring-2 focus-visible:outline-none [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]",
+        "font-ui cta-button bubble-hover inline-flex min-h-11 items-center justify-center gap-2 rounded-[0.9rem] px-5 py-2.5 text-sm font-semibold tracking-[0.06em] transition duration-300 active:translate-y-px focus-visible:ring-2 focus-visible:outline-none [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]",
         variantStyles[variant],
         className,
       )}

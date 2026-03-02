@@ -17,7 +17,9 @@ export function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
               {item.href && !isLast ? (
                 <Link
                   href={item.href}
-                  className="underline-offset-4 transition hover:text-[var(--breadcrumb-link-hover)] hover:underline"
+                  data-track-event="breadcrumb_click"
+                  data-track-label={item.label}
+                  className="underline-offset-4 transition hover:text-[var(--breadcrumb-link-hover)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cta-secondary-ring)]"
                 >
                   {item.label}
                 </Link>

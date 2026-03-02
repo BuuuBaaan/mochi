@@ -59,13 +59,17 @@ export function FilterableGrid({
         </label>
         <input
           id="search-field"
+          type="search"
+          enterKeyHint="search"
+          autoComplete="off"
+          spellCheck={false}
           value={query}
           onChange={(event) => {
             setQuery(event.target.value);
             setCurrentPage(1);
           }}
           placeholder={`${typeLabel}をタイトル・タグで検索`}
-          className="font-ui w-full rounded-[1rem] border border-[var(--line-strong)] bg-[linear-gradient(152deg,rgba(8,27,52,0.88),rgba(11,37,67,0.86)_56%,rgba(9,28,53,0.88))] px-4 py-3 text-sm tracking-[0.03em] text-[var(--text-strong)] shadow-[0_14px_30px_rgba(1,9,24,0.42)] outline-none transition focus:border-cyan-400 focus:ring-2 focus:ring-cyan-200"
+          className="font-ui w-full rounded-[1rem] border border-[var(--line-strong)] bg-[linear-gradient(152deg,rgba(8,27,52,0.9),rgba(11,37,67,0.88)_56%,rgba(9,28,53,0.9))] px-4 py-3 text-sm tracking-[0.03em] text-[var(--text-strong)] shadow-[0_14px_30px_rgba(1,9,24,0.42)] outline-none transition focus:border-cyan-300 focus:ring-2 focus:ring-cyan-200"
         />
       </div>
 
@@ -95,7 +99,9 @@ export function FilterableGrid({
                 <div className="mt-5">
                   <Link
                     href={item.href}
-                    className="font-ui cta-button bubble-hover bubble-size-md inline-flex rounded-[0.75rem] border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-3 py-1.5 text-sm font-semibold tracking-[0.06em] text-[var(--cta-ghost-text)] transition hover:brightness-105 [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]"
+                    data-track-event="list_item_click"
+                    data-track-label={item.title}
+                    className="font-ui cta-button bubble-hover bubble-size-md inline-flex rounded-[0.75rem] border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-3 py-1.5 text-sm font-semibold tracking-[0.06em] text-[var(--cta-ghost-text)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cta-secondary-ring)] [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]"
                   >
                     詳細を見る →
                   </Link>

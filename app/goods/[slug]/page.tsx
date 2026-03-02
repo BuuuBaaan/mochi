@@ -131,7 +131,9 @@ export default async function GoodsDetailPage({ params }: GoodsDetailPageProps) 
             <Link
               key={`goods-detail-tab-${tabProduct.slug}`}
               href={`/goods/${tabProduct.slug}`}
-                className={`bubble-hover rounded-full border px-4 py-2 text-sm font-semibold transition ${
+              data-track-event="goods_tab_click"
+              data-track-label={tabProduct.slug}
+              className={`bubble-hover rounded-full border px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cta-secondary-ring)] ${
                 tabProduct.slug === product.slug
                   ? "border-[var(--cta-primary-border)] bg-[var(--cta-primary-bg)] text-[var(--cta-primary-text)] shadow-[var(--cta-primary-shadow)]"
                   : "border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] text-[var(--cta-ghost-text)] hover:brightness-105"
@@ -165,7 +167,7 @@ export default async function GoodsDetailPage({ params }: GoodsDetailPageProps) 
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <AmazonCta url={product.amazonProductUrl} readyLabel={siteConfig.commerce.primaryCtaLabel} />
-                <CtaButton href={siteConfig.commerce.fallbackContactHref} variant="ghost">
+                <CtaButton href={siteConfig.commerce.fallbackContactHref} variant="ghost" trackingId="goods_detail_contact">
                   商品について問い合わせる
                 </CtaButton>
               </div>
@@ -257,7 +259,7 @@ export default async function GoodsDetailPage({ params }: GoodsDetailPageProps) 
         </section>
 
         <div className="mt-6 text-sm">
-          <Link href="/goods" className="font-semibold text-cyan-800 underline-offset-4 hover:underline">
+          <Link href="/goods" data-track-event="goods_back_to_index" className="font-semibold text-cyan-800 underline-offset-4 hover:underline">
             ← 物販一覧へ戻る
           </Link>
         </div>

@@ -145,23 +145,23 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
             実際の在庫・価格・取引条件は販売ページが最新です。記事で基礎を押さえたあとに、現行出品を確認してください。
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <CtaButton href={siteConfig.social.yahooAuctions} target="_blank" rel="noreferrer">
+            <CtaButton href={siteConfig.social.yahooAuctions} target="_blank" rel="noreferrer" trackingId="blog_detail_auction">
               出品中を見に行く（ヤフオク）
             </CtaButton>
-            <CtaButton href="/faq" variant="ghost">
+            <CtaButton href="/faq" variant="ghost" trackingId="blog_detail_faq">
               FAQを読む
             </CtaButton>
-            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="secondary">
+            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="secondary" trackingId="blog_detail_youtube">
               YouTubeで現物動画を見る
             </CtaButton>
-            <CtaButton href="/goods" variant="ghost">
+            <CtaButton href="/goods" variant="ghost" trackingId="blog_detail_goods">
               物販を見る
             </CtaButton>
           </div>
         </section>
 
         <div className="mt-6 text-sm">
-          <Link href="/blog" className="font-semibold text-cyan-800 underline-offset-4 hover:underline">
+          <Link href="/blog" data-track-event="blog_back_to_index" className="font-semibold text-cyan-800 underline-offset-4 hover:underline">
             ← ブログ一覧へ戻る
           </Link>
         </div>

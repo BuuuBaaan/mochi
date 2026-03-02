@@ -19,6 +19,7 @@ export function AmazonCta({ url, readyLabel, className, compact = false }: Amazo
         href={activeUrl}
         target="_blank"
         rel="noreferrer"
+        trackingId="amazon_cta"
         className={className}
       >
         {readyLabel ?? siteConfig.commerce.primaryCtaLabel}
@@ -37,7 +38,7 @@ export function AmazonCta({ url, readyLabel, className, compact = false }: Amazo
       >
         {siteConfig.commerce.pendingCtaLabel}
       </span>
-      <CtaButton href={siteConfig.commerce.fallbackContactHref} variant="ghost">
+      <CtaButton href={siteConfig.commerce.fallbackContactHref} variant="ghost" trackingId="amazon_fallback_contact">
         {siteConfig.commerce.fallbackContactLabel}
       </CtaButton>
     </div>

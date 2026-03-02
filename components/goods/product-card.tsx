@@ -14,7 +14,7 @@ type ProductCardProps = {
 export function ProductCard({ product, compact = false }: ProductCardProps) {
   return (
     <Card className="overflow-hidden border-[var(--line-strong)] bg-[linear-gradient(160deg,rgba(7,28,53,0.9),rgba(11,41,74,0.86)_58%,rgba(7,31,56,0.88))]">
-      <Link href={`/goods/${product.slug}`} className="block">
+      <Link href={`/goods/${product.slug}`} data-track-event="product_card_open" data-track-label={product.slug} className="block">
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
             src={product.image}
@@ -33,7 +33,7 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
 
         <div className="bubble-hover bubble-size-lg rounded-[1.15rem] border border-white/18 bg-white/6 p-4">
           <h3 className="font-display text-2xl font-semibold tracking-tight text-white">
-            <Link href={`/goods/${product.slug}`} className="hover:text-cyan-200">
+            <Link href={`/goods/${product.slug}`} data-track-event="product_card_open" data-track-label={product.slug} className="hover:text-cyan-200">
               {product.name}
             </Link>
           </h3>
@@ -53,6 +53,8 @@ export function ProductCard({ product, compact = false }: ProductCardProps) {
           <AmazonCta url={product.amazonProductUrl} compact />
           <Link
             href={`/goods/${product.slug}`}
+            data-track-event="product_card_open"
+            data-track-label={product.slug}
             className="font-ui cta-button bubble-hover bubble-size-md inline-flex items-center justify-center rounded-[0.75rem] border border-[var(--cta-ghost-border)] bg-[var(--cta-ghost-bg)] px-4 py-2 text-sm font-semibold tracking-[0.06em] text-[var(--cta-ghost-text)] shadow-[var(--cta-ghost-shadow)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]"
           >
             詳細を見る

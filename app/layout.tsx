@@ -18,6 +18,11 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  applicationName: siteConfig.name,
+  robots: {
+    index: true,
+    follow: true,
+  },
   alternates: {
     canonical: absoluteUrl("/"),
   },
@@ -81,10 +86,24 @@ export default function RootLayout({
     ],
   };
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    inLanguage: "ja",
+    description: siteConfig.description,
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+
   return (
     <html lang="ja" style={themeCssVariables}>
       <body className={`${themeFontVariableClasses} antialiased`}>
-        <JsonLd data={orgSchema} />
+        <JsonLd data={[orgSchema, websiteSchema]} />
         <SiteShell>{children}</SiteShell>
         <Analytics />
       </body>

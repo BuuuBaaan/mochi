@@ -22,10 +22,11 @@ export function Header() {
   const amazonStoreUrl = getAmazonStoreUrl();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--line-soft)] bg-[linear-gradient(168deg,rgba(2,9,22,0.92),rgba(5,20,46,0.9)_55%,rgba(10,41,78,0.86))] backdrop-blur-xl">
-      <div className="layout-shell flex w-full items-center justify-between gap-3 px-4 py-3 sm:px-6">
+    <header className="sticky top-0 z-50 border-b border-[var(--line-soft)] bg-[linear-gradient(168deg,rgba(2,9,22,0.92),rgba(5,20,46,0.9)_55%,rgba(10,41,78,0.86))] shadow-[0_12px_34px_rgba(1,8,21,0.5)] backdrop-blur-xl supports-[backdrop-filter]:bg-[linear-gradient(168deg,rgba(2,9,22,0.72),rgba(5,20,46,0.72)_55%,rgba(10,41,78,0.7))]">
+      <div className="layout-shell flex w-full items-center justify-between gap-3 px-4 py-2.5 sm:px-6">
         <Link
           href="/"
+          data-track-event="nav_home"
           className="group inline-flex items-center gap-4 rounded-[1rem] border border-transparent px-2 py-1.5 outline-none transition hover:border-[var(--line-strong)] hover:bg-white/6 focus-visible:ring-2 focus-visible:ring-[var(--cta-secondary-ring)]"
         >
           <span className="logo-plate inline-flex h-[3.9rem] w-[3.9rem] items-center justify-center rounded-full p-1 sm:h-[4.9rem] sm:w-[4.9rem]">
@@ -50,7 +51,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls="global-nav"
           onClick={() => setOpen((prev) => !prev)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-[0.75rem] border border-[var(--header-nav-border)] bg-[var(--header-nav-bg)] text-white md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-[0.75rem] border border-[var(--header-nav-border)] bg-[var(--header-nav-bg)] text-white shadow-[0_10px_20px_rgba(1,9,22,0.42)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cta-secondary-ring)] md:hidden"
         >
           <span className="sr-only">メニューを開閉</span>
           <span className="space-y-1.5">
@@ -66,8 +67,10 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                data-track-event="nav_click"
+                data-track-label={item.label}
                 className={cn(
-                  "font-ui rounded-[0.75rem] border border-[var(--header-nav-border)] bg-[var(--header-nav-bg)] px-3 py-2 text-sm font-semibold tracking-[0.05em] text-[var(--header-nav-text)] transition hover:bg-[var(--header-nav-hover-bg)] focus-visible:ring-2 focus-visible:ring-[var(--cta-secondary-ring)] focus-visible:outline-none [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]",
+                  "font-ui rounded-[0.75rem] border border-[var(--header-nav-border)] bg-[var(--header-nav-bg)] px-3.5 py-2.5 text-sm font-semibold tracking-[0.05em] text-[var(--header-nav-text)] shadow-[0_10px_18px_rgba(1,8,21,0.34)] transition hover:bg-[var(--header-nav-hover-bg)] focus-visible:ring-2 focus-visible:ring-[var(--cta-secondary-ring)] focus-visible:outline-none [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]",
                   isActive(pathname, item.href) && "border-[var(--header-nav-active-border)] bg-[var(--header-nav-active-bg)]",
                 )}
               >
@@ -79,7 +82,9 @@ export function Header() {
             href={siteConfig.social.yahooAuctions}
             target="_blank"
             rel="noreferrer"
-            className="font-ui cta-button bubble-hover bubble-size-md rounded-[0.8rem] border border-[var(--header-auction-border)] bg-[var(--header-auction-bg)] px-4 py-2 text-sm font-semibold tracking-[0.05em] text-[var(--header-auction-text)] shadow-[var(--header-auction-shadow)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--header-auction-ring)] [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]"
+            data-track-event="cta_click"
+            data-track-label="header_auction"
+            className="font-ui cta-button bubble-hover bubble-size-md rounded-[0.8rem] border border-[var(--header-auction-border)] bg-[var(--header-auction-bg)] px-4 py-2.5 text-sm font-semibold tracking-[0.05em] text-[var(--header-auction-text)] shadow-[var(--header-auction-shadow)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--header-auction-ring)] [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]"
           >
             出品中を見る
           </Link>
@@ -88,7 +93,9 @@ export function Header() {
               href={amazonStoreUrl}
               target="_blank"
               rel="noreferrer"
-              className="font-ui cta-button bubble-hover bubble-size-md rounded-[0.8rem] border border-[var(--header-utility-border)] bg-[var(--header-utility-bg)] px-4 py-2 text-sm font-semibold tracking-[0.05em] text-[var(--header-utility-text)] transition hover:bg-[var(--header-nav-hover-bg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cta-secondary-ring)] [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]"
+              data-track-event="cta_click"
+              data-track-label="header_amazon"
+              className="font-ui cta-button bubble-hover bubble-size-md rounded-[0.8rem] border border-[var(--header-utility-border)] bg-[var(--header-utility-bg)] px-4 py-2.5 text-sm font-semibold tracking-[0.05em] text-[var(--header-utility-text)] transition hover:bg-[var(--header-nav-hover-bg)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cta-secondary-ring)] [clip-path:polygon(0_0,100%_0,95%_100%,0_100%)]"
             >
               Amazonページへ
             </Link>
@@ -107,14 +114,16 @@ export function Header() {
         )}
       >
         <nav className="overflow-hidden">
-          <div className="layout-shell flex w-full flex-col gap-1 px-4 py-3 sm:px-6">
+          <div className="layout-shell flex w-full flex-col gap-1.5 px-4 py-3 sm:px-6">
             {siteConfig.navigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
+                data-track-event="nav_click"
+                data-track-label={item.label}
                 className={cn(
-                  "font-ui rounded-[0.75rem] border border-[var(--header-nav-border)] bg-[var(--header-nav-bg)] px-3 py-2 text-sm font-semibold tracking-[0.05em] text-[var(--header-nav-text)] [clip-path:polygon(0_0,100%_0,97%_100%,0_100%)]",
+                  "font-ui rounded-[0.75rem] border border-[var(--header-nav-border)] bg-[var(--header-nav-bg)] px-3 py-2.5 text-sm font-semibold tracking-[0.05em] text-[var(--header-nav-text)] [clip-path:polygon(0_0,100%_0,97%_100%,0_100%)]",
                   isActive(pathname, item.href) && "border-[var(--header-nav-active-border)] bg-[var(--header-nav-active-bg)]",
                 )}
               >
@@ -126,14 +135,18 @@ export function Header() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="font-ui cta-button bubble-hover bubble-size-md mt-2 rounded-[0.75rem] border border-[var(--header-auction-border)] bg-[var(--header-auction-bg)] px-3 py-2 text-center text-sm font-semibold tracking-[0.05em] text-[var(--header-auction-text)] [clip-path:polygon(0_0,100%_0,97%_100%,0_100%)]"
+              data-track-event="cta_click"
+              data-track-label="header_auction_mobile"
+              className="font-ui cta-button bubble-hover bubble-size-md mt-2 rounded-[0.75rem] border border-[var(--header-auction-border)] bg-[var(--header-auction-bg)] px-3 py-2.5 text-center text-sm font-semibold tracking-[0.05em] text-[var(--header-auction-text)] [clip-path:polygon(0_0,100%_0,97%_100%,0_100%)]"
             >
               出品中を見に行く（ヤフオク）
             </Link>
             <Link
               href={amazonStoreUrl ?? "/goods"}
               onClick={() => setOpen(false)}
-              className="font-ui cta-button bubble-hover bubble-size-md rounded-[0.75rem] border border-[var(--header-utility-border)] bg-[var(--header-utility-bg)] px-3 py-2 text-center text-sm font-semibold tracking-[0.05em] text-[var(--header-utility-text)] [clip-path:polygon(0_0,100%_0,97%_100%,0_100%)]"
+              data-track-event="cta_click"
+              data-track-label="header_amazon_mobile"
+              className="font-ui cta-button bubble-hover bubble-size-md rounded-[0.75rem] border border-[var(--header-utility-border)] bg-[var(--header-utility-bg)] px-3 py-2.5 text-center text-sm font-semibold tracking-[0.05em] text-[var(--header-utility-text)] [clip-path:polygon(0_0,100%_0,97%_100%,0_100%)]"
             >
               {amazonStoreUrl ? "Amazonページへ" : "Amazon準備中（物販ページへ）"}
             </Link>

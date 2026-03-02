@@ -142,23 +142,23 @@ export default async function VarietyDetailPage({ params }: VarietyDetailPagePro
             体型や光り方の最終判断は動画が有効です。YouTubeの現物動画、ヤフオク出品画像を合わせて確認してください。
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
-            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="secondary">
+            <CtaButton href={siteConfig.social.youtube} target="_blank" rel="noreferrer" variant="secondary" trackingId="variety_detail_youtube">
               YouTubeで現物動画を見る
             </CtaButton>
-            <CtaButton href={siteConfig.social.yahooAuctions} target="_blank" rel="noreferrer" variant="ghost">
+            <CtaButton href={siteConfig.social.yahooAuctions} target="_blank" rel="noreferrer" variant="ghost" trackingId="variety_detail_auction">
               出品中を見に行く
             </CtaButton>
-            <CtaButton href="/faq" variant="ghost">
+            <CtaButton href="/faq" variant="ghost" trackingId="variety_detail_faq">
               購入前FAQを見る
             </CtaButton>
-            <CtaButton href="/goods" variant="ghost">
+            <CtaButton href="/goods" variant="ghost" trackingId="variety_detail_goods">
               物販を見る
             </CtaButton>
           </div>
         </section>
 
         <div className="mt-6 text-sm">
-          <Link href="/varieties" className="font-semibold text-cyan-800 underline-offset-4 hover:underline">
+          <Link href="/varieties" data-track-event="varieties_back_to_index" className="font-semibold text-cyan-800 underline-offset-4 hover:underline">
             ← 品種図鑑一覧へ戻る
           </Link>
         </div>

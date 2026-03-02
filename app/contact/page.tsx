@@ -47,7 +47,8 @@ export default function ContactPage() {
               </p>
             )}
 
-            <form action={formspreeEndpoint || undefined} method="POST" className="mt-5 space-y-4">
+            <form action={formspreeEndpoint || undefined} method="POST" data-track-submit="contact_submit" className="mt-5 space-y-4">
+              <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" className="hidden" />
               <div>
                 <label htmlFor="name" className="mb-1 block text-sm font-semibold text-slate-800">
                   お名前
@@ -55,6 +56,7 @@ export default function ContactPage() {
                 <input
                   id="name"
                   name="name"
+                  autoComplete="name"
                   required
                   className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
                 />
@@ -67,6 +69,7 @@ export default function ContactPage() {
                   id="email"
                   name="email"
                   type="email"
+                  autoComplete="email"
                   required
                   className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
                 />
@@ -79,6 +82,8 @@ export default function ContactPage() {
                   id="message"
                   name="message"
                   rows={6}
+                  minLength={10}
+                  autoComplete="off"
                   required
                   className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200"
                 />
