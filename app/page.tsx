@@ -50,28 +50,44 @@ const goodsQuickTabs = [
 
 const actionCards = [
   {
+    kicker: "MOVIE",
     title: "YouTubeで現物動画",
     body: "体型や泳ぎを先に確認して、購入判断の精度を上げる。",
     href: siteConfig.social.youtube,
     external: true,
+    cardClass:
+      "border-[#66d8dc]/60 bg-[linear-gradient(155deg,rgba(234,252,255,0.9),rgba(214,243,250,0.88)_58%,rgba(220,235,255,0.9))]",
+    buttonVariant: "primary" as const,
   },
   {
+    kicker: "SOCIAL",
     title: "Instagramで最新情報",
     body: "選別中の個体や飼育の進捗を、短時間で追う。",
     href: siteConfig.social.instagram,
     external: true,
+    cardClass:
+      "border-[#8dafe9]/60 bg-[linear-gradient(155deg,rgba(241,247,255,0.92),rgba(226,236,255,0.9)_56%,rgba(236,232,255,0.88))]",
+    buttonVariant: "ghost" as const,
   },
   {
+    kicker: "AUCTION",
     title: "ヤフオクの出品中個体",
     body: "不定期出品の最新在庫をそのまま確認する。",
     href: siteConfig.social.yahooAuctions,
     external: true,
+    cardClass:
+      "border-[#f3c75f]/65 bg-[linear-gradient(155deg,rgba(255,248,226,0.92),rgba(255,239,197,0.9)_54%,rgba(255,231,178,0.88))]",
+    buttonVariant: "secondary" as const,
   },
   {
+    kicker: "FAQ",
     title: "購入前FAQ",
     body: "死着・水合わせ・発送の不安を先に解消する。",
     href: "/faq",
     external: false,
+    cardClass:
+      "border-[#8f87d1]/55 bg-[linear-gradient(155deg,rgba(245,243,255,0.92),rgba(232,236,255,0.9)_56%,rgba(227,242,255,0.9))]",
+    buttonVariant: "ghost" as const,
   },
 ];
 
@@ -93,18 +109,22 @@ export default async function Home() {
         />
         <div className="layout-shell grid w-full gap-10 content-block md:grid-cols-[1.2fr_0.8fr] md:items-center">
           <div>
-            <div className="rise-in inline-flex items-center gap-3 rounded-full border border-[#f3c85b]/55 bg-[#f6c93d]/14 px-3 py-2 backdrop-blur-sm">
-              <span className="logo-plate inline-flex h-10 w-10 items-center justify-center rounded-full p-1">
+            <div className="rise-in inline-flex items-center gap-3 rounded-full border border-[#f3c85b]/55 bg-[#f6c93d]/14 px-4 py-2 backdrop-blur-sm">
+              <span className="font-ui text-[11px] font-semibold tracking-[0.2em] text-[#ffe7a1] [text-shadow:0_2px_8px_rgba(5,17,32,0.75)]">
+                MOCHIMEDAKA OFFICIAL
+              </span>
+              <span className="relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-white/24 bg-white/8">
                 <Image
                   src={siteConfig.logo.src}
                   alt={siteConfig.logo.alt}
-                  width={36}
-                  height={36}
-                  className="h-8 w-8 rounded-full object-cover"
+                  width={32}
+                  height={32}
+                  className="h-7 w-7 rounded-full object-cover opacity-45 saturate-[0.65] contrast-90"
                 />
-              </span>
-              <span className="font-ui text-[11px] font-semibold tracking-[0.2em] text-[#ffe7a1] [text-shadow:0_2px_8px_rgba(5,17,32,0.75)]">
-                MOCHIMEDAKA OFFICIAL
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_22%,rgba(255,255,255,0.28),transparent_55%)]"
+                />
               </span>
             </div>
             <p className="font-ui on-dark-eyebrow rise-in text-xs font-semibold uppercase tracking-[0.3em]">
@@ -148,26 +168,49 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="surface py-10">
+      <section className="relative overflow-hidden py-12">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_14%_18%,rgba(84,209,214,0.2),transparent_32%),radial-gradient(circle_at_88%_82%,rgba(241,191,61,0.18),transparent_30%),linear-gradient(180deg,rgba(243,251,255,0.92),rgba(232,245,253,0.92))]"
+        />
         <div className="layout-shell w-full content-block">
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="relative rounded-[2rem] border border-[#a2c9e1]/70 bg-[linear-gradient(155deg,rgba(251,255,255,0.88),rgba(238,248,255,0.9)_52%,rgba(233,246,255,0.88))] p-6 shadow-[0_18px_44px_rgba(9,35,58,0.14)] md:p-8">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p className="font-ui text-xs font-semibold uppercase tracking-[0.24em] text-[#2e6f96]">Quick Actions</p>
+                <h2 className="font-display mt-2 text-2xl font-semibold text-[#123a5c] md:text-3xl">最短導線をここに集約</h2>
+              </div>
+              <p className="max-w-xl text-sm leading-7 text-[#325a78]">
+                現物確認・最新情報・出品在庫・不安解消を一つの帯に統合。ロゴの勢いをアクセントに、迷わない行動導線へ。
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {actionCards.map((action) => (
-              <Card key={action.title} className="p-5">
-                <h2 className="font-display text-lg font-semibold tracking-tight text-slate-900">{action.title}</h2>
-                <p className="mt-2 text-sm leading-7 text-slate-700">{action.body}</p>
-                <div className="mt-5">
+              <article
+                key={action.title}
+                className={`group rounded-2xl border p-5 shadow-[0_14px_30px_rgba(11,38,62,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_40px_rgba(11,38,62,0.18)] ${action.cardClass}`}
+              >
+                <p className="font-ui text-[11px] font-semibold uppercase tracking-[0.18em] text-[#32678d]">{action.kicker}</p>
+                <h2 className="font-display mt-2 text-lg font-semibold tracking-tight text-[#102f4b]">{action.title}</h2>
+                <p className="mt-2 text-sm leading-7 text-[#2b506d]">{action.body}</p>
+                <div className="mt-5 flex items-center justify-between gap-3">
+                  <span
+                    aria-hidden
+                    className="h-8 w-8 rounded-full border border-white/65 bg-[radial-gradient(circle_at_30%_28%,rgba(255,255,255,0.9),rgba(255,255,255,0.45)_56%,rgba(118,184,222,0.25))]"
+                  />
                   <CtaButton
                     href={action.href}
-                    variant="secondary"
+                    variant={action.buttonVariant}
                     target={action.external ? "_blank" : undefined}
                     rel={action.external ? "noreferrer" : undefined}
-                    className="w-full justify-center"
+                    className="px-4 py-2"
                   >
                     開く
                   </CtaButton>
                 </div>
-              </Card>
+              </article>
             ))}
+            </div>
           </div>
         </div>
       </section>

@@ -415,11 +415,17 @@ a {
 }
 
 .site-surface :is(.bg-white, .bg-white\/95, .bg-white\/90, .bg-white\/85, .bg-white\/80, .bg-white\/75, .bg-white\/70) {
-  background-color: var(--surface-elevated) !important;
+  background:
+    radial-gradient(circle at 18% 16%, rgb(134 214 242 / 0.16), transparent 38%),
+    radial-gradient(circle at 86% 82%, rgb(245 198 56 / 0.1), transparent 30%),
+    linear-gradient(158deg, rgb(255 255 255 / 0.84) 0%, rgb(242 249 255 / 0.86) 58%, rgb(236 246 255 / 0.88) 100%) !important;
 }
 
 .site-surface :is(.bg-slate-100, .bg-slate-50, .bg-slate-50\/70, .bg-slate-50\/60, .bg-cyan-50\/70, .bg-cyan-50\/60, .bg-cyan-50\/40, .bg-cyan-50, .bg-amber-50) {
-  background-color: var(--surface-muted) !important;
+  background:
+    radial-gradient(circle at 14% 16%, rgb(132 214 239 / 0.14), transparent 34%),
+    radial-gradient(circle at 80% 78%, rgb(129 112 192 / 0.1), transparent 30%),
+    linear-gradient(158deg, rgb(244 251 255 / 0.88) 0%, rgb(232 245 255 / 0.9) 56%, rgb(225 240 252 / 0.9) 100%) !important;
 }
 
 .site-surface :is(.border-slate-200, .border-slate-300) {
