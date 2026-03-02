@@ -24,7 +24,7 @@ export function Footer() {
               alt={siteConfig.logo.alt}
               width={50}
               height={50}
-              className="logo-plate h-12 w-12 rounded-full border border-white/65 object-cover p-1"
+              className="logo-plate h-12 w-12 rounded-full object-contain p-1"
             />
             <div>
               <h2 className="font-display text-base font-semibold tracking-[0.05em] text-white">{siteConfig.name}</h2>

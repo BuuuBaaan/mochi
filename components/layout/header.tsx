@@ -28,13 +28,13 @@ export function Header() {
           href="/"
           className="group inline-flex items-center gap-4 rounded-full px-2 py-1 outline-none transition hover:bg-white/12 focus-visible:ring-2 focus-visible:ring-cyan-300"
         >
-          <span className="logo-plate inline-flex h-14 w-14 items-center justify-center rounded-full p-1.5 sm:h-[4.5rem] sm:w-[4.5rem]">
+          <span className="logo-plate inline-flex h-14 w-14 items-center justify-center rounded-full p-1 sm:h-[4.5rem] sm:w-[4.5rem]">
             <Image
               src={siteConfig.logo.src}
               alt={siteConfig.logo.alt}
               width={64}
               height={64}
-              className="h-11 w-11 rounded-full object-cover sm:h-[3.55rem] sm:w-[3.55rem]"
+              className="h-11 w-11 rounded-full object-contain sm:h-[3.55rem] sm:w-[3.55rem]"
             />
           </span>
           <span className="hidden sm:block">

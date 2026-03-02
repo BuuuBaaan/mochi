@@ -115,11 +115,11 @@ export default async function Home() {
                   alt={siteConfig.logo.alt}
                   width={32}
                   height={32}
-                  className="h-7 w-7 rounded-full object-cover opacity-42 saturate-[0.62] contrast-85"
+                  className="h-7 w-7 rounded-full object-contain opacity-92"
                 />
               </span>
             </div>
-            <p className="font-ui on-dark-eyebrow rise-in text-xs font-semibold uppercase tracking-[0.3em]">
+            <p className="font-ui on-dark-eyebrow rise-in mt-4 text-xs font-semibold uppercase tracking-[0.3em]">
               Aquatic Craft
             </p>
             <h1 className="font-display on-dark-title rise-in rise-delay-1 mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
