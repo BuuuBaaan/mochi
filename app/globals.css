@@ -4,9 +4,9 @@
   --bg-canvas: #e9f4fb;
   --bg-canvas-deep: #d7e9f6;
   --bg-canvas-mist: #f4fbff;
-  --bg-night-1: #07223f;
-  --bg-night-2: #0f3d68;
-  --bg-night-3: #1a6785;
+  --bg-night-1: #061d37;
+  --bg-night-2: #0b355d;
+  --bg-night-3: #14557b;
 
   --surface-base: rgb(246 251 255 / 0.92);
   --surface-muted: rgb(235 246 254 / 0.93);
@@ -17,19 +17,24 @@
   --line-strong: rgb(89 134 167 / 0.66);
   --line-glass: rgb(255 255 255 / 0.62);
 
-  --text-strong: #0f2840;
-  --text-default: #1f435f;
+  --text-strong: #0e2842;
+  --text-default: #173e5f;
   --text-muted: #4d708c;
-  --text-inverse: #eef8ff;
+  --text-inverse: #f3fbff;
 
-  --primary-500: #1a65a4;
-  --primary-600: #14568f;
-  --primary-700: #0d426f;
+  --primary-500: #19639e;
+  --primary-600: #114f82;
+  --primary-700: #0a3d65;
   --primary-ink: #f3f9ff;
 
   --accent-mint: #80def0;
   --accent-foam: #caf1ff;
   --accent-gold: #f5dc9d;
+  --accent-violet: #6b58b5;
+  --logo-cyan: #52d3d2;
+  --logo-yellow: #f4c617;
+  --logo-orange: #ea8617;
+  --logo-brown: #5c360f;
 
   --shadow-soft: 0 18px 42px rgb(11 37 64 / 0.14);
   --shadow-card: 0 22px 52px rgb(8 31 54 / 0.16);
@@ -58,6 +63,7 @@ body {
   background:
     radial-gradient(circle at 9% 11%, rgb(194 238 255 / 0.72) 0, transparent 30%),
     radial-gradient(circle at 88% 10%, rgb(255 236 190 / 0.44) 0, transparent 24%),
+    radial-gradient(circle at 83% 86%, rgb(126 104 196 / 0.1) 0, transparent 24%),
     radial-gradient(circle at 76% 74%, rgb(142 218 241 / 0.4) 0, transparent 30%),
     linear-gradient(160deg, var(--bg-canvas-mist) 0%, var(--bg-canvas) 48%, var(--bg-canvas-deep) 100%);
   color: var(--text-default);
@@ -147,10 +153,53 @@ a {
 }
 
 .sparkle-strip {
+  position: relative;
+  isolation: isolate;
   background-image:
-    radial-gradient(circle at 10% 14%, rgb(151 224 245 / 0.34) 0, transparent 34%),
-    radial-gradient(circle at 84% 26%, rgb(246 217 149 / 0.23) 0, transparent 30%),
-    linear-gradient(155deg, var(--bg-night-1) 0%, var(--bg-night-2) 50%, var(--bg-night-3) 100%);
+    radial-gradient(circle at 8% 14%, rgb(109 220 228 / 0.33) 0, transparent 32%),
+    radial-gradient(circle at 83% 28%, rgb(243 198 23 / 0.18) 0, transparent 28%),
+    radial-gradient(circle at 70% 78%, rgb(107 88 181 / 0.14) 0, transparent 30%),
+    linear-gradient(154deg, var(--bg-night-1) 0%, var(--bg-night-2) 52%, var(--bg-night-3) 100%);
+}
+
+.sparkle-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(110deg, rgb(4 17 32 / 0.58) 0%, rgb(4 17 32 / 0.24) 44%, transparent 74%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.04), transparent 35%);
+}
+
+.sparkle-strip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 12% 88%, rgb(255 206 82 / 0.22) 0, transparent 24%);
+}
+
+.sparkle-strip > * {
+  position: relative;
+  z-index: 1;
+}
+
+.on-dark-eyebrow {
+  color: #ffe38c;
+  text-shadow: 0 2px 10px rgb(4 16 31 / 0.6);
+}
+
+.on-dark-title {
+  color: #fff5cf;
+  text-shadow:
+    0 4px 18px rgb(4 16 31 / 0.75),
+    0 1px 0 rgb(255 255 255 / 0.2);
+}
+
+.on-dark-copy {
+  color: #eaf6ff;
+  text-shadow: 0 2px 14px rgb(5 18 33 / 0.62);
 }
 
 .surface {
@@ -390,7 +439,7 @@ a {
 }
 
 .site-surface :is(.text-cyan-900, .text-cyan-800, .text-cyan-700) {
-  color: var(--primary-600) !important;
+  color: var(--primary-700) !important;
 }
 
 .site-surface :is(.text-amber-900, .text-amber-800) {

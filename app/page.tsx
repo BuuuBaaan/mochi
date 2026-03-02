@@ -87,9 +87,13 @@ export default async function Home() {
   return (
     <div className="page-wrap">
       <section className="sparkle-strip relative isolate overflow-hidden border-b border-white/20 py-20 text-white">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(112deg,rgba(4,17,32,0.62)_0%,rgba(4,17,32,0.24)_42%,transparent_74%)]"
+        />
         <div className="layout-shell grid w-full gap-10 content-block md:grid-cols-[1.2fr_0.8fr] md:items-center">
           <div>
-            <div className="rise-in inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/12 px-3 py-2 backdrop-blur-sm">
+            <div className="rise-in inline-flex items-center gap-3 rounded-full border border-[#f3c85b]/55 bg-[#f6c93d]/14 px-3 py-2 backdrop-blur-sm">
               <span className="logo-plate inline-flex h-10 w-10 items-center justify-center rounded-full p-1">
                 <Image
                   src={siteConfig.logo.src}
@@ -99,17 +103,17 @@ export default async function Home() {
                   className="h-8 w-8 rounded-full object-cover"
                 />
               </span>
-              <span className="font-ui text-[11px] font-semibold tracking-[0.2em] text-cyan-100/95">
+              <span className="font-ui text-[11px] font-semibold tracking-[0.2em] text-[#ffe7a1] [text-shadow:0_2px_8px_rgba(5,17,32,0.75)]">
                 MOCHIMEDAKA OFFICIAL
               </span>
             </div>
-            <p className="font-ui rise-in text-xs font-semibold uppercase tracking-[0.3em] text-cyan-100/90">
+            <p className="font-ui on-dark-eyebrow rise-in text-xs font-semibold uppercase tracking-[0.3em]">
               Aquatic Craft
             </p>
-            <h1 className="font-display rise-in rise-delay-1 mt-4 text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            <h1 className="font-display on-dark-title rise-in rise-delay-1 mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
               ラメの煌めきと、強さのある育成個体を。
             </h1>
-            <p className="rise-in rise-delay-2 mt-5 max-w-2xl text-base leading-8 text-slate-100/95">
+            <p className="on-dark-copy rise-in rise-delay-2 mt-5 max-w-2xl text-base leading-8">
               もちめだかは、雨ざらし飼育で鍛えた個体づくりを軸に、ラメ系・ダルマ系の魅力を発信するブランドです。
               生体はヤフオク/BASE、物販はAmazonへ、迷わず進める導線で案内します。
             </p>
@@ -117,28 +121,28 @@ export default async function Home() {
               <CtaButton href={siteConfig.social.yahooAuctions} target="_blank" rel="noreferrer">
                 出品中を見に行く（ヤフオク）
               </CtaButton>
-              <CtaButton href="/goods" variant="ghost" className="ring-white/35 bg-white/12 text-white hover:bg-white/20">
+              <CtaButton href="/goods" variant="ghost" className="ring-[#f6cc63]/45 bg-white/12 text-[#f3fbff] hover:bg-white/20">
                 物販を見る
               </CtaButton>
-              <CtaButton href="/shop" variant="ghost" className="ring-white/35 bg-white/12 text-white hover:bg-white/20">
+              <CtaButton href="/shop" variant="ghost" className="ring-[#f6cc63]/45 bg-white/12 text-[#f3fbff] hover:bg-white/20">
                 購入の流れを確認
               </CtaButton>
             </div>
           </div>
           <div className="glass-panel rounded-3xl p-6 text-white">
-            <h2 className="font-display text-lg font-bold">信頼のために公開していること</h2>
-            <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-100/95">
+            <h2 className="font-display on-dark-title text-lg font-bold">信頼のために公開していること</h2>
+            <ul className="on-dark-copy mt-4 space-y-3 text-sm leading-7">
               {trustPoints.map((point) => (
                 <li key={point} className="flex gap-2">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-cyan-300" />
+                  <span className="mt-1.5 h-2 w-2 rounded-full bg-[#ffd15c]" />
                   <span>{point}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-6 flex flex-wrap gap-2">
-              <Badge className="border-cyan-200/55 bg-cyan-200/18 text-cyan-50">迅速発送</Badge>
-              <Badge className="border-cyan-200/55 bg-cyan-200/18 text-cyan-50">初心者歓迎</Badge>
-              <Badge className="border-cyan-200/55 bg-cyan-200/18 text-cyan-50">動画公開</Badge>
+              <Badge className="border-[#f7cf67]/45 bg-[#f7c841]/15 text-[#fff1c8]">迅速発送</Badge>
+              <Badge className="border-[#f7cf67]/45 bg-[#f7c841]/15 text-[#fff1c8]">初心者歓迎</Badge>
+              <Badge className="border-[#f7cf67]/45 bg-[#f7c841]/15 text-[#fff1c8]">動画公開</Badge>
             </div>
           </div>
         </div>
@@ -172,9 +176,9 @@ export default async function Home() {
         <div className="layout-shell w-full content-block">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
             <div>
-              <p className="font-ui text-xs font-semibold uppercase tracking-[0.26em] text-cyan-100/90">Goods</p>
-              <h2 className="font-display mt-2 text-3xl text-white sm:text-4xl">物販（餌 / グリーンウォーター）</h2>
-              <p className="mt-3 max-w-2xl text-sm leading-8 text-slate-100/95">
+              <p className="font-ui on-dark-eyebrow text-xs font-semibold uppercase tracking-[0.26em]">Goods</p>
+              <h2 className="font-display on-dark-title mt-2 text-3xl sm:text-4xl">物販（餌 / グリーンウォーター）</h2>
+              <p className="on-dark-copy mt-3 max-w-2xl text-sm leading-8">
                 生体とは別に、日常運用を支える2商品だけを厳選。購入はAmazonへ送客し、準備中の場合は問い合わせ導線へ自動切替します。
               </p>
             </div>
@@ -187,16 +191,16 @@ export default async function Home() {
                 <>
                 <span
                     aria-disabled="true"
-                    className="font-ui inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold tracking-[0.03em] text-slate-200"
+                    className="font-ui inline-flex items-center rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-sm font-semibold tracking-[0.03em] text-[#eff8ff]"
                   >
                     Amazon準備中
                   </span>
-                  <CtaButton href="/contact" variant="ghost" className="ring-white/35 bg-white/12 text-white hover:bg-white/20">
+                  <CtaButton href="/contact" variant="ghost" className="ring-[#f6cc63]/45 bg-white/12 text-[#f3fbff] hover:bg-white/20">
                     入荷通知を問い合わせる
                   </CtaButton>
                 </>
               )}
-              <CtaButton href="/goods" variant="ghost" className="ring-white/35 bg-white/12 text-white hover:bg-white/20">
+              <CtaButton href="/goods" variant="ghost" className="ring-[#f6cc63]/45 bg-white/12 text-[#f3fbff] hover:bg-white/20">
                 物販一覧を見る
               </CtaButton>
             </div>
@@ -207,11 +211,11 @@ export default async function Home() {
                 <Link
                   key={`home-tab-${product.slug}`}
                   href={`/goods/${product.slug}`}
-                  className="bubble-hover rounded-2xl border border-white/30 bg-white/12 px-5 py-4 transition hover:-translate-y-0.5 hover:bg-white/18"
+                  className="bubble-hover rounded-2xl border border-white/35 bg-white/14 px-5 py-4 transition hover:-translate-y-0.5 hover:bg-white/20"
                 >
-                  <p className="font-ui text-xs font-semibold uppercase tracking-[0.14em] text-cyan-100/90">注目商品</p>
-                  <p className="font-display mt-2 text-lg font-semibold text-white">{product.name}</p>
-                  <p className="mt-1 text-sm leading-7 text-slate-100/95">{product.shortCatch}</p>
+                  <p className="font-ui on-dark-eyebrow text-xs font-semibold uppercase tracking-[0.14em]">注目商品</p>
+                  <p className="font-display on-dark-title mt-2 text-lg font-semibold">{product.name}</p>
+                  <p className="on-dark-copy mt-1 text-sm leading-7">{product.shortCatch}</p>
                 </Link>
               ))}
             </div>
@@ -220,7 +224,7 @@ export default async function Home() {
                 <Link
                   key={tab.href}
                   href={tab.href}
-                  className="font-ui bubble-hover rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-cyan-50 transition hover:bg-white/16"
+                  className="font-ui bubble-hover rounded-full border border-white/35 bg-white/12 px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[#edf9ff] transition hover:bg-white/20"
                 >
                   {tab.label}
                 </Link>

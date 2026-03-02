@@ -19,20 +19,20 @@ export function PageHero({ eyebrow, title, description, badges = [], actions }: 
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-28 right-[-7%] h-80 w-80 rounded-full bg-amber-200/14 blur-3xl"
+        className="pointer-events-none absolute -bottom-28 right-[-7%] h-80 w-80 rounded-full bg-amber-200/16 blur-3xl"
       />
       <div className="layout-shell w-full content-block">
-        <p className="font-ui text-xs font-semibold uppercase tracking-[0.28em] text-cyan-100/90">{eyebrow}</p>
-        <h1 className="font-display mt-4 text-4xl font-bold leading-[1.24] text-[var(--text-inverse)] sm:text-5xl">
+        <p className="font-ui on-dark-eyebrow text-xs font-semibold uppercase tracking-[0.28em]">{eyebrow}</p>
+        <h1 className="font-display on-dark-title mt-4 text-4xl font-bold leading-[1.24] sm:text-5xl">
           {title}
         </h1>
-        <p className="mt-5 max-w-3xl text-sm leading-8 text-slate-100/95 sm:text-base">{description}</p>
+        <p className="on-dark-copy mt-5 max-w-3xl text-sm leading-8 sm:text-base">{description}</p>
         {badges.length > 0 ? (
           <div className="mt-6 flex flex-wrap gap-2">
             {badges.map((badge) => (
               <Badge
                 key={badge}
-                className="border-cyan-200/55 bg-cyan-100/18 text-cyan-50"
+                className="border-[#f9cf64]/45 bg-[#f7c941]/15 text-[#fff1c6]"
               >
                 {badge}
               </Badge>

@@ -22,7 +22,7 @@ export function Header() {
   const amazonStoreUrl = getAmazonStoreUrl();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/20 bg-[linear-gradient(168deg,rgba(6,31,55,0.9),rgba(12,53,88,0.88)_56%,rgba(18,82,109,0.82))] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/20 bg-[linear-gradient(168deg,rgba(6,29,52,0.93),rgba(10,48,80,0.9)_55%,rgba(17,79,106,0.84))] backdrop-blur-xl">
       <div className="layout-shell flex w-full items-center justify-between gap-3 px-4 py-3.5 sm:px-6">
         <Link
           href="/"
@@ -68,7 +68,7 @@ export function Header() {
                 href={item.href}
                 className={cn(
                   "font-ui rounded-full px-3 py-2 text-sm font-semibold tracking-[0.03em] text-slate-100 transition hover:bg-white/14 hover:text-white focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:outline-none",
-                  isActive(pathname, item.href) && "bg-white/22 text-white",
+                  isActive(pathname, item.href) && "border border-[#f2c854]/45 bg-white/20 text-[#fff4d0]",
                 )}
               >
                 {item.label}
@@ -79,7 +79,7 @@ export function Header() {
             href={siteConfig.social.yahooAuctions}
             target="_blank"
             rel="noreferrer"
-            className="font-ui bubble-hover rounded-full bg-[linear-gradient(136deg,#0f426f,#165c95_52%,#1a76a7)] px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[#eef8ff] shadow-[0_12px_24px_rgba(10,44,77,0.36)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+            className="font-ui bubble-hover rounded-full border border-[#f6cb61]/70 bg-[linear-gradient(136deg,#f6d447,#f2bb21_45%,#e78717)] px-4 py-2 text-sm font-semibold tracking-[0.03em] text-[#4f2f10] shadow-[0_12px_24px_rgba(104,70,13,0.34)] transition hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4ce72]/80"
           >
             出品中を見る
           </Link>
@@ -115,7 +115,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 className={cn(
                   "font-ui rounded-lg px-3 py-2 text-sm font-semibold tracking-[0.03em] text-slate-100",
-                  isActive(pathname, item.href) && "bg-white/20 text-white",
+                  isActive(pathname, item.href) && "bg-white/20 text-[#fff4d0]",
                 )}
               >
                 {item.label}
@@ -126,7 +126,7 @@ export function Header() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="font-ui bubble-hover mt-2 rounded-lg bg-[linear-gradient(136deg,#0f426f,#165c95_52%,#1a76a7)] px-3 py-2 text-center text-sm font-semibold tracking-[0.03em] text-[#eef8ff]"
+              className="font-ui bubble-hover mt-2 rounded-lg border border-[#f6cb61]/70 bg-[linear-gradient(136deg,#f6d447,#f2bb21_45%,#e78717)] px-3 py-2 text-center text-sm font-semibold tracking-[0.03em] text-[#4f2f10]"
             >
               出品中を見に行く（ヤフオク）
             </Link>
